@@ -12,7 +12,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright"></Col>
         <Col md="4" className="footer-copywright">
-          <h3>© All Rights Reserved by Jordan Macia </h3>
+          <h3>© Tous droits réservés par Jordan Macia </h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">

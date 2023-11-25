@@ -79,7 +79,7 @@ function ProjectCards(props) {
             target="_blank"
             style={{ marginLeft: "10px" }}
           >
-            <FaStickyNote /> &nbsp; Hacking Notes
+            <FaStickyNote /> &nbsp; Prise de Notes
           </Button>
         )}
 
@@ -101,7 +101,7 @@ function ProjectCards(props) {
             target="_blank"
             style={{ marginLeft: "10px" }}
           >
-            <FaGraduationCap /> &nbsp; Course Link
+            <FaGraduationCap /> &nbsp; Cours
           </Button>
         )}
 
@@ -113,7 +113,7 @@ function ProjectCards(props) {
             style={{ marginLeft: "10px" }}
 
           >
-            <FaGraduationCap /> &nbsp; Certification Link
+            <FaGraduationCap /> &nbsp; Certification
           </Button>
         )}  
 

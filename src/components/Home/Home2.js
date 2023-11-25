@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/jordan.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -17,56 +17,56 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              PERMETTEZ-MOI DE ME <span className="purple"> PRÉSENTER </span>
             </h1>
             <p className="home-about-body">
-            As a child, my 
-            <i>
-                <b className="purple"> life's dream </b>
-            </i>
-              was to learn how to hack everything, and now I'm making it happen,
-            but always in an 
-            <i>
-                <b className="purple"> ethical   </b>
-            </i>
-            and 
-            <i>
-                <b className="purple"> controlled  </b>
-            </i>
-            way. 🤷🏻‍♂️
-              <br />
-              <br />My goal is to become an expert in cybersecurity, with a specific emphasis on the 
+          
+              Je suis actuellement en deuxième année de
               <i>
-                <b className="purple"> offensive aspect </b>
+                <b className="purple"> BTS SIO option SISR au Lycée Ozenne </b>
               </i>
-              often referred to as
+              à Toulouse, en France, où j'apprends les
+              <i>
+                <b className="purple"> réseaux informatiques, la cybersécurité, la programmation et l'administration système </b>
+              </i>
+              , ce qui me donne une base très solide.
+              <br />
+              <br />
+            Depuis que je suis enfant, j'ai toujours aspiré à 
+            <i>
+                <b className="purple"> acquérir des compétences </b>
+            </i>
+               dans le domaine de la sécurité informatique, en comprenant les mécanismes de piratage tout en l'utilisant de manière
+ <i>
+                <b className="purple"> éthique </b>
+            </i>
+            et
+            <i>
+                <b className="purple"> contrôlée. </b>
+            </i>
+ Petit à petit, je vois ce rêve se concrétiser. 🤷🏻‍♂️
+              <br />
+             <br />
+             Je consacre une grande partie de mon temps libre à l'auto-apprentissage, par exemple à travers des cours en ligne tels que
+              <i>
+                <b className="purple"> "Introduction au piratage éthique" ou "Linux et Bash avancé" sur la plateforme Hack4u.io </b>
+              </i>
+              <br />
+              Je m'exerce également sur des machines configurées dans des environnements de vulnérabilité réelle via des plates-formes telles que
+              <i>
+                <b className="purple"> Hackthebox et TryHackMe. </b>
+              </i>
+              <br />
+              Vous pouvez trouver plus d'informations sur ces intérêts dans la section des projets.
+              <br />
+              <br />Mon objectif est de devenir un expert en cybersécurité, avec un accent particulier sur l'aspect
+              <i>
+                <b className="purple"> offensif </b>
+              </i>
+              souvent désigné sous le nom de
               <i>
                 <b className="purple"> red teaming </b>
               </i>
-              <br />
-              <br />
-              I am currently in the second year of 
-              <i>
-                <b className="purple"> BTS SIO option SISR at Lycée Ozenne  </b>
-              </i>
-              in Toulouse, France, where I learn about
-              <i>
-                <b className="purple"> computer networks, cybersecurity, programming and system administration </b>
-              </i>
-              , which provides me with a strong foundation
-              <br />
-              <br />
-              In my free time, I dedicate a significant amount of time to self-education, taking courses like 
-              <i>
-                <b className="purple"> "Introduction to Hacking" or "Advanced Linux and Bash."  </b>
-              </i>
-              <br />
-              I also practice on machines configured in real vulnerability environments through platforms like
-              <i>
-                <b className="purple"> Hackthebox and TryHackMe. </b>
-              </i>
-              <br />
-              You can find more information about these interests in the projects section.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -77,10 +77,7 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
-            </p>
+            <h1>TROUVEZ-MOI SUR</h1>
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a

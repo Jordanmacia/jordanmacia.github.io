@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
   return (
@@ -8,13 +7,12 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-          Hello my name is <span className="purple">Jordan Macia</span> !
-          <br /> I'm <span className="purple">19 years old</span> and I was born in Andorra 🇦🇩, a microstate where I've always lived until two years ago.
-          <br /><br />Currently, I'm in my second year of university studies in <span className="purple">Toulouse </span>France pursuing a <span className="purple">BTS SIO SISR at Lycée Ozenne. </span> . 
-          <br /> My goal is to stay in France at least until I complete my Master's in cybersecurity. 
-          <br /> <br />  Next year, I'd like to continue with a <span className="purple">Licence 3</span>, Degree in SISR in Toulouse but in an <span className="purple">Alternance</span> format, 
-          working at a company where I can learn and gain new knowledge related to my passion, which is ethical hacking.
-     
+            Bonjour, je m'appelle <span className="purple">Jordan MACIA</span> !
+            <br /> J'ai <span className="purple">19 ans</span> et je suis né en Andorre 🇦🇩, un micro-état où j'ai toujours vécu jusqu'à il y a deux ans. Donc, mes langues maternelles sont l'espagnol et le catalan, ma langue scolaire est le français depuis la primaire, et j'ai également un niveau B2 en anglais.
+            <br /><br />Actuellement, je suis en deuxième année d'études universitaires à <span className="purple">Toulouse</span>, en France, où je poursuis un <span className="purple">BTS SIO SISR au Lycée Ozenne.</span>
+            <br />Mon objectif est de rester en France au moins jusqu'à l'obtention de mon Master en cybersécurité.
+            <br /> <br /> L'année prochaine, j'aimerais continuer avec une <span className="purple">Licence 3</span>, en SISR à Toulouse, mais sous forme d'<span className="purple"> Alternance</span>,
+            en travaillant dans une entreprise où je pourrais apprendre et acquérir de nouvelles connaissances liées à ma passion, qui est le piratage éthique.
           </p>
         </blockquote>
       </Card.Body>

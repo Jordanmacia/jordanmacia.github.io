@@ -14,10 +14,10 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Mes <strong className="purple">Travaux Récents</strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Voici quelques projets sur lesquels j'ai récemment travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
@@ -25,7 +25,7 @@ function Projects() {
               imgPath={chatify}
               isBlog={false}
               title="HackTheBox & TryHackMe"
-              description="HackTheBox and TryHackme are two platforms where I regularly practice, facing real environments that present various situations and challenges, such as exploiting vulnerabilities, solving security puzzles, and privilege escalation. These experiences allow me to improve my cybersecurity skills and be prepared for real-world situations."
+              description="HackTheBox et TryHackMe sont deux plateformes sur lesquelles je m'entraîne régulièrement, en affrontant des environnements réels qui présentent diverses situations et défis, tels que l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges. Ces expériences me permettent d'améliorer mes compétences en cybersécurité et d'être prêt pour des situations du monde réel."
               cubeLink="https://app.hackthebox.com/profile/1345367"
               cloudLink="https://tryhackme.com/p/jord4n"
             />
@@ -35,10 +35,10 @@ function Projects() {
             <ProjectCard
               imgPath={bitsOfCode}
               isBlog={false}
-              title="Introduction to Hacking Course"
-              description="This course has taken approximately 150 hours of my time. Despite being an introductory course, it has provided me with a strong foundation to start in the world of ethical hacking. I've gained a solid understanding and taken very useful notes with Obsidian, which are in the Hacking Notes section. I've learned everything from conducting network scans, which includes identifying devices, enumerating domains, subdomains, files, and web technologies, as well as identifying ports and subsequently enumerating common services and content management systems like FTP, SSH, WordPress, and Joomla. I've also delved into specific concepts, such as using Docker environments, in-depth knowledge of the top 10 OWASP vulnerabilities, and other web vulnerabilities. I've acquired knowledge of privilege escalation techniques, basics of Buffer Overflow, and solved five machines with different vulnerabilities presented during the course. As additional material, I've explored the use of Metasploit, SQLMAP, and pivoting techniques. In conclusion, I've learned how to write reports and reports using LaTeX."
+              title="Cours d'Initiation au Hacking"
+              description="Ce cours a pris environ 150 heures de mon temps. Malgré son caractère introductif, il m'a fourni une base solide pour débuter dans le monde du hacking éthique. J'ai acquis une compréhension solide et pris des notes très utiles avec Obsidian, qui se trouvent dans la section 'Prise de Notes'. J'ai tout appris, des scans de réseau, y compris l'identification des appareils, l'énumération des domaines, sous-domaines, fichiers et technologies web, à l'identification des ports, puis à l'énumération des services courants et des systèmes de gestion de contenu tels que FTP, SSH, WordPress et Joomla. J'ai également exploré des concepts spécifiques, tels que l'utilisation d'environnements Docker, une connaissance approfondie des 10 premières vulnérabilités de l'OWASP et d'autres vulnérabilités web. J'ai acquis des connaissances sur les techniques d'élévation de privilèges, les bases du dépassement de tampon et j'ai résolu cinq machines présentant des vulnérabilités différentes pendant le cours. En tant que matériel supplémentaire, j'ai exploré l'utilisation de Metasploit, SQLMAP et des techniques de pivot. En conclusion, j'ai appris à rédiger des rapports en utilisant LaTeX."
               courseLink="https://hack4u.io/cursos/introduccion-al-hacking/"
-              notesLink="/resume/"
+              notesLink="https://hacking-notes-jordan.gitbook.io/notes/"
             />
           </Col>
 
@@ -46,11 +46,9 @@ function Projects() {
             <ProjectCard
               imgPath={editor}
               isBlog={false}
-              title="Introduction to Linux Course"
-              description="This course has taken me approximately around 40 hours to complete, during which I've learned all the fundamentals of Linux, including commands, interpreting normal and SUID permissions, using cron for scheduled tasks, data and binary file encryption, encoding and decoding, as well as managing keys and SSH connections. I've also carried out a final project that involved writing Bash scripts to simulate two famous techniques used in casinos: the Martingale and the Inverse La Brouchere. The goal was to challenge the casino roulette, and to achieve this, I developed and defined the logic of several commonly used techniques. The ultimate purpose was to determine if these techniques are genuinely effective and ultimately demonstrate that, in the end, the house always has the advantage."
+              title="Cours d'Initiation à Linux"
+              description="Ce cours m'a pris environ 40 heures pour le terminer, au cours duquel j'ai appris toutes les bases de Linux, y compris les commandes, l'interprétation des autorisations normales et SUID, l'utilisation de cron pour les tâches planifiées, le chiffrement de fichiers de données et binaires, l'encodage et le décodage, ainsi que la gestion des clés et des connexions SSH. J'ai également réalisé un projet final qui consistait à écrire des scripts Bash pour simuler deux techniques célèbres utilisées dans les casinos : le Martingale et l'Inverse La Brouchere. Le but était de défier la roulette du casino, et pour y parvenir, j'ai développé et défini la logique de plusieurs techniques couramment utilisées. L'objectif ultime était de déterminer si ces techniques sont véritablement efficaces et de démontrer finalement que, en fin de compte, la maison a toujours l'avantage."
                courseLink="https://hack4u.io/cursos/introduccion-a-linux/"
-              ghLink="https://github.com/Jordanmacia/Losse-Betting-Simulator"
-
             />
           </Col>
 
@@ -58,8 +56,8 @@ function Projects() {
             <ProjectCard
               imgPath={leaf}
               isBlog={false}
-              title="Web-Exploit-Scripts"
-              description="During my introductory hacking course, I have developed several scripts that automate the necessary processes for practicing Python and Bash scripting related to the 10 OWASP vulnerabilities, as well as other web vulnerabilities."
+              title="Scripts d'Exploitation Web"
+              description="Pendant mon cours d'initiation au hacking, j'ai développé plusieurs scripts qui automatisent les processus nécessaires pour pratiquer la programmation en Python et en Bash liée aux 10 premières vulnérabilités de l'OWASP, ainsi qu'à d'autres vulnérabilités web."
               ghLink="https://github.com/Jordanmacia/Web-Exploit-Scripts"
             />
           </Col>
@@ -68,8 +66,8 @@ function Projects() {
             <ProjectCard
               imgPath={suicide}
               isBlog={false}
-              title="eJPT Certification"
-              description="My goal for 2024 is to obtain the EJPTv2 certificate, which involves demonstrating my expertise in identifying and resolving vulnerabilities, protecting networks, and managing cybersecurity threats. Furthermore, it will enable me to advance in my cybersecurity career and contribute more effectively to information and online security."
+              title="Certification eJPT"
+              description="Mon objectif pour 2024 est d'obtenir la certification EJPTv2, ce qui implique de démontrer mon expertise dans l'identification et la résolution de vulnérabilités, la protection des réseaux et la gestion des menaces en cybersécurité. De plus, cela me permettra de progresser dans ma carrière en cybersécurité et de contribuer de manière plus efficace à la sécurité de l'information et en ligne."
               certificationLink="https://security.ine.com/certifications/ejpt-certification/"
             />
           </Col>
