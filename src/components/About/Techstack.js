@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import {
-  DiPython,
   DiLinux,
   DiWindows,
 } from "react-icons/di";
@@ -22,7 +21,6 @@ function Techstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {renderTechIcon(DiLinux, "Linux")}
       {renderTechIcon(DiWindows, "Windows")}
-      {renderTechIcon(DiPython, "Python")}
       <Col xs={4} md={2} className="tech-icons">
         <img src={bashImage} alt="Bash Shell" style={{ width: logoSize, height: logoSize }} />
       </Col>

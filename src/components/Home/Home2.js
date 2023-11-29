@@ -21,36 +21,21 @@ function Home2() {
             </h1>
             <p className="home-about-body">
           
-              Je suis actuellement en deuxième année de
+              Actuellement en deuxième année de
               <i>
-                <b className="purple"> BTS SIO option SISR au Lycée Ozenne </b>
+                <b className="purple"> BTS SIO option SISR </b>
               </i>
-              à Toulouse, en France, où j'apprends les
+              au Lycée Ozenne à Toulouse où j'apprends les
               <i>
-                <b className="purple"> réseaux informatiques, la cybersécurité, la programmation et l'administration système </b>
+                <b className="purple"> réseaux informatiques, la cybersécurité et l'administration système. </b>
               </i>
-              , ce qui me donne une base très solide.
               <br />
               <br />
-            Depuis que je suis enfant, j'ai toujours aspiré à 
-            <i>
-                <b className="purple"> acquérir des compétences </b>
-            </i>
-               dans le domaine de la sécurité informatique, en comprenant les mécanismes de piratage tout en l'utilisant de manière
- <i>
-                <b className="purple"> éthique </b>
-            </i>
-            et
-            <i>
-                <b className="purple"> contrôlée. </b>
-            </i>
- Petit à petit, je vois ce rêve se concrétiser. 🤷🏻‍♂️
-              <br />
-             <br />
-             Je consacre une grande partie de mon temps libre à l'auto-apprentissage, par exemple à travers des cours en ligne tels que
+              Je consacre une grande partie de mon temps libre à l'autoformation, à travers des cours en ligne tels que
               <i>
-                <b className="purple"> "Introduction au piratage éthique" ou "Linux et Bash avancé" sur la plateforme Hack4u.io </b>
+                <b className="purple"> "Introduction au piratage éthique" ou "Linux avancé" sur la plateforme Hack4u.io </b>
               </i>
+              <br />
               <br />
               Je m'exerce également sur des machines configurées dans des environnements de vulnérabilité réelle via des plates-formes telles que
               <i>
@@ -58,7 +43,9 @@ function Home2() {
               </i>
               <br />
               Vous pouvez trouver plus d'informations sur ces intérêts dans la section des projets.
-              <br />
+                    
+             <br />
+             
               <br />Mon objectif est de devenir un expert en cybersécurité, avec un accent particulier sur l'aspect
               <i>
                 <b className="purple"> offensif </b>
