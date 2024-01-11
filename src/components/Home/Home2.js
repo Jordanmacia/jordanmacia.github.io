@@ -66,6 +66,14 @@ function Home2() {
           <Col md={12} className="home-about-social">
             <h1>TROUVEZ-MOI SUR</h1>
             <ul className="home-about-social-links">
+            <li className="social-icons">
+                <a
+                  href="mailto:jordanmacia@protonmail.com" 
+                  className="icon-colour home-social-icons" 
+                >
+                  <MdEmail /> {/* Use the email icon */}
+                </a>
+              </li>
               <li className="social-icons">
                 <a
                   href="https://github.com/jordanmacia"
@@ -76,14 +84,7 @@ function Home2() {
                    <AiFillGithub />
                 </a>
               </li>
-              <li className="social-icons">
-                <a
-                  href="mailto:jordanmacia@protonmail.com" 
-                  className="icon-colour home-social-icons" 
-                >
-                  <MdEmail /> {/* Use the email icon */}
-                </a>
-              </li>
+             
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/jordanmacia/"

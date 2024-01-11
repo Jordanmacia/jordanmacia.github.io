@@ -85,21 +85,9 @@ function NavBar() {
 
             <Nav.Item>
             <Nav.Link href="https://hacking-notes-jordan.gitbook.io/notes/" target="_blank">
-         <CgFileDocument style={{ marginBottom: "2px" }} /> Prise de Notes
+         <CgFileDocument style={{ marginBottom: "2px" }} /> Hacking Notes
             </Nav.Link>
           </Nav.Item>
-
-
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/"
-                onClick={() => updateExpanded(false)}
-              >
-                <DiLinux style={{ marginBottom: "2px" }} /> Espace Linux
-              </Nav.Link>
-            </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
