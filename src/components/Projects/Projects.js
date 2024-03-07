@@ -30,8 +30,8 @@ function Projects() {
                 <strong className="purple">HackTheBox </strong> et <strong className="purple">TryHackMe</strong> sont deux plateformes sur lesquelles je m'entraîne régulièrement, en affrontant des environnements réels qui présentent diverses situations et défis, tels que l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges.        
                 </div>
               }
-              cubeLink="https://app.hackthebox.com/profile/1345367"
-              cloudLink="https://tryhackme.com/p/jord4n"
+              cubeLink="https://hackthebox.com/"
+              cloudLink="https://tryhackme.com/"
             />
           </Col>
           <Col md={4} className="project-card">

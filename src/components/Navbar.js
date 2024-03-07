@@ -88,7 +88,15 @@ function NavBar() {
          <CgFileDocument style={{ marginBottom: "2px" }} /> Hacking Notes
             </Nav.Link>
           </Nav.Item>
-
+          <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/resume"
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> CV
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item className="fork-btn">
               <Button
                 href="mailto:jordanmacia@protonmail.com"
