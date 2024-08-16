@@ -1,32 +1,35 @@
 {
   "files": {
     "main.css": "/static/css/main.2ec858c0.css",
-    "main.js": "/static/js/main.ced0c7e8.js",
+    "main.js": "/static/js/main.24f7c8b8.js",
     "static/js/651.266d86e8.chunk.js": "/static/js/651.266d86e8.chunk.js",
     "static/media/chatify.png": "/static/media/chatify.b90bc67a78f2f01e751e.png",
-    "static/media/jordan.png": "/static/media/jordan.ebb7fd5be321cc30185b.png",
     "static/media/blog.png": "/static/media/blog.657a31f8706b7f38b649.png",
-    "static/media/CV-Jordan-MACIA.pdf": "/static/media/CV-Jordan-MACIA.397bb594c10dcb6132a0.pdf",
+    "static/media/CV-Jordan-MACIA.pdf": "/static/media/CV-Jordan-MACIA.1964a4f936913ad31192.pdf",
+    "static/media/jordan.png": "/static/media/jordan.c008521fcd0da0bd3445.png",
     "static/media/codeEditor.png": "/static/media/codeEditor.9788b2506e1aa93a3605.png",
     "static/media/suicide.png": "/static/media/suicide.6cbc111eb018644e5c6d.png",
     "static/media/home-main.png": "/static/media/home-main.1d1b1fd245ae0b6c2fc8.png",
     "static/media/about.png": "/static/media/about.a7a468d8129a3fb36508.png",
     "static/media/leaf.png": "/static/media/leaf.4539608454f95c6af7ff.png",
+    "static/media/Hacking-notes.png": "/static/media/Hacking-notes.0b5e7443f16b828ae964.png",
     "static/media/Nmap.png": "/static/media/Nmap.b416193b080550674ddf.png",
+    "static/media/Vulnhub.png": "/static/media/Vulnhub.2867ea795cd9fc75ef2c.png",
     "static/media/Metasploit.png": "/static/media/Metasploit.9ea4110bed3868215960.png",
     "static/media/sqlmap.png": "/static/media/sqlmap.f8670ad2394b50bf4b49.png",
-    "static/media/bash.png": "/static/media/bash.f0151973355073831b5d.png",
     "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/Hackthebox.png": "/static/media/Hackthebox.ff1a02a95ad5206d8897.png",
+    "static/media/Portswigger.png": "/static/media/Portswigger.5ef46190217072446266.png",
     "static/media/Burpsuite.png": "/static/media/Burpsuite.c28c1221454f727f5da6.png",
     "static/media/logo.png": "/static/media/logo.736f1894a75c453fcef3.png",
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.2ec858c0.css.map": "/static/css/main.2ec858c0.css.map",
-    "main.ced0c7e8.js.map": "/static/js/main.ced0c7e8.js.map",
+    "main.24f7c8b8.js.map": "/static/js/main.24f7c8b8.js.map",
     "651.266d86e8.chunk.js.map": "/static/js/651.266d86e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2ec858c0.css",
-    "static/js/main.ced0c7e8.js"
+    "static/js/main.24f7c8b8.js"
   ]
 }
