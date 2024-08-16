@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import Platforms from "./Platforms";
 
 function About() {
   return (
@@ -35,10 +36,15 @@ function About() {
           </Col>
         </Row>
         <h1 className="project-heading">
-          <strong className="purple">Compétences</strong> professionnelles acquises:
+          <strong className="purple">Systèmes </strong> d'exploitation:
         </h1>
 
         <Techstack />
+
+        <h1 className="project-heading">
+        Les<strong className="purple"> Plateformes </strong> où je m'entraîne:
+        </h1>
+        <Platforms />
 
         <h1 className="project-heading">
         Les<strong className="purple"> outils </strong> que j'utilise:

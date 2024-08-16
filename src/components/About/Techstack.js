@@ -6,7 +6,7 @@ import {
 } from "react-icons/di";
 
 
-import bashImage from "../../Assets/Projects/bash.png"; // Ruta relativa al archivo de imagen
+
 
 function Techstack() {
   const logoSize = "90px"; // Tamaño deseado para los logos
@@ -21,9 +21,6 @@ function Techstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {renderTechIcon(DiLinux, "Linux")}
       {renderTechIcon(DiWindows, "Windows")}
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={bashImage} alt="Bash Shell" style={{ width: logoSize, height: logoSize }} />
-      </Col>
     </Row>
   );
 }

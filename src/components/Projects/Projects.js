@@ -7,6 +7,8 @@ import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
 import suicide from "../../Assets/Projects/suicide.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
+import HackingNotes from "../../Assets/Projects/Hacking-notes.png";
+
 
 function Projects() {
   return (
@@ -24,14 +26,26 @@ function Projects() {
             <ProjectCard
               imgPath={chatify}
               isBlog={false}
-              title="HackTheBox & TryHackMe"
+              title="Plateforme Entrainement"
               description={
                 <div style={{ color: "white" }}>
-                <strong className="purple">HackTheBox </strong> et <strong className="purple">TryHackMe</strong> sont deux plateformes sur lesquelles je m'entraîne régulièrement, en affrontant des environnements réels qui présentent diverses situations et défis, tels que l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges.        
+                <strong className="purple">HackTheBox </strong> est une plateforme sur laquelle je m'entraîne régulièrement, en affrontant des environnements réels qui présentent diverses situations et défis, tels que l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges.        
                 </div>
               }
               cubeLink="https://hackthebox.com/"
-              cloudLink="https://tryhackme.com/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={HackingNotes}
+              isBlog={false}
+              title="Hacking Notes"
+              description={
+                <div style={{ color: "white" }}>
+               Voici mon site web où j'ai rassemblé l'ensemble de mes  <strong className="purple">prise de notes </strong> tout au long de ma formation en cybersécurité (offensive). Ces procédures sont fréquemment  <strong className="purple">mises à jour </strong> dans le but de constituer une base d'informations complète pour me servir de référence en cas de doutes. Ci-dessous, vous trouverez le sommaire avec les différentes sections que j'ai intégrées dans le cadre de mon parcours en cybersécurité.         
+                </div>
+              }
+              notesLink="https://hacking-notes-jordan.gitbook.io/notes"
             />
           </Col>
           <Col md={4} className="project-card">
@@ -110,7 +124,7 @@ function Projects() {
               title="Certification eJPT"
               description={
                 <div style={{ color: "white" }}>
-                Mon objectif pour 2024 est d'obtenir la certification <strong className="purple">EJPTv2 </strong>, ce qui implique de démontrer mon expertise dans l'identification et la résolution de vulnérabilités, la protection des réseaux et la gestion des menaces en cybersécurité.                 
+                Mon objectif pour 2025 est d'obtenir la certification <strong className="purple">EJPTv2 </strong>, ce qui implique de démontrer mon expertise dans l'identification et la résolution de vulnérabilités, la protection des réseaux et la gestion des menaces en cybersécurité.                 
                 </div>
               }
               certificationLink="https://security.ine.com/certifications/ejpt-certification/"              />

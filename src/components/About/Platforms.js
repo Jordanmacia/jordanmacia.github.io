@@ -2,19 +2,17 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 
 // Importa las imágenes con rutas absolutas
-import NmapIcon from "../../Assets/Projects/Nmap.png";
-import BurpIcon from "../../Assets/Projects/Burpsuite.png";
-import MetaIcon from "../../Assets/Projects/Metasploit.png";
-import SqlIcon from "../../Assets/Projects/sqlmap.png";
+import HackpIcon from "../../Assets/Projects/Hackthebox.png";
+import VulnIcon from "../../Assets/Projects/Vulnhub.png";
+import PortIcon from "../../Assets/Projects/Portswigger.png";
 
 const icons = [
-  { icon: NmapIcon, alt: "Nmap Icon" },
-  { icon: BurpIcon, alt: "Burp Icon" },
-  { icon: MetaIcon, alt: "Meta Icon" },
-  { icon: SqlIcon, alt: "Sql Icon" },
+  { icon: HackpIcon, alt: "Hack Icon" },
+  { icon: VulnIcon, alt: "Vuln Icon" },
+  { icon: PortIcon, alt: "Port Icon" },
 ];
 
-function Toolstack() {
+function Platforms() {
   const iconStyle = {
     width: "100px", // Tamaño para la imagen
     height: "100px", // Tamaño para la imagen
@@ -31,4 +29,4 @@ function Toolstack() {
   );
 }
 
-export default Toolstack;
+export default Platforms;

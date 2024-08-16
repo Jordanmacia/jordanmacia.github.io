@@ -71,6 +71,8 @@ function ProjectCards(props) {
             <FaCloud /> &nbsp; TryHackMe
           </Button>
         )}
+        
+        
 
         {notesLink && (
           <Button
@@ -79,7 +81,7 @@ function ProjectCards(props) {
             target="_blank"
             style={{ marginLeft: "10px" }}
           >
-            <FaStickyNote /> &nbsp; Prise de Notes
+            <FaStickyNote /> &nbsp; Hacking Notes
           </Button>
         )}
 

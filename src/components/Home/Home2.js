@@ -21,14 +21,19 @@ function Home2() {
             </h1>
             <p className="home-about-body">
           
-              Actuellement en deuxième année de
-              <i>
-                <b className="purple"> BTS SIO option SISR </b>
+            Futur étudiant en troisième année de 
+            <i>
+                <b className="purple">  Bachelor </b>
+            </i>
+            , option
+            <i>
+                <b className="purple">  Cybersécurité </b>
               </i>
-              au Lycée Ozenne à Toulouse où j'apprends les
+              à
               <i>
-                <b className="purple"> réseaux informatiques, la cybersécurité et l'administration système. </b>
+                <b className="purple">  Ynov Campus </b>
               </i>
+              .
               <br />
               <br />
               Je consacre une grande partie de mon temps libre à l'autoformation, à travers des cours en ligne tels que
@@ -97,7 +102,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href=""
+                  href="https://app.hackthebox.com/profile/1345367"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
