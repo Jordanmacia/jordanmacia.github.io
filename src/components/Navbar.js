@@ -84,7 +84,7 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-            <Nav.Link href="https://hacking-notes-jordan.gitbook.io/notes/" target="_blank">
+            <Nav.Link href="https://hacking-notes.jord4n.pro/" target="_blank">
          <CgFileDocument style={{ marginBottom: "2px" }} /> Hacking Notes
             </Nav.Link>
           </Nav.Item>

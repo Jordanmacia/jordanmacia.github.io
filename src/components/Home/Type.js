@@ -7,7 +7,7 @@ function Type() {
       options={{
         strings: [
           "Passionate About Hacking",
-          "Ethical Red Teaming",
+          "Ethical Pentester",
           "In Constant Learning",
         ],
         autoStart: true,

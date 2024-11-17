@@ -5,22 +5,27 @@ import {
   DiWindows,
 } from "react-icons/di";
 
-
-
-
 function Techstack() {
   const logoSize = "90px"; // Tamaño deseado para los logos
 
-  const renderTechIcon = (icon, altText) => (
+  const renderTechIcon = (icon, altText, link) => (
     <Col xs={4} md={2} className="tech-icons">
-      {icon({ style: { fontSize: logoSize } })}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={altText}
+        style={{ textDecoration: "none", color: "white" }} // Fuerza el color blanco
+      >
+        {icon({ style: { fontSize: logoSize } })}
+      </a>
     </Col>
   );
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {renderTechIcon(DiLinux, "Linux")}
-      {renderTechIcon(DiWindows, "Windows")}
+      {renderTechIcon(DiLinux, "Linux", "https://parrotsec.org/")}
+      {renderTechIcon(DiWindows, "Windows", "https://www.microsoft.com/en-us/windows")}
     </Row>
   );
 }

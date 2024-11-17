@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
-import {
-  FaCube,
-  FaCloud,
-  FaStickyNote,
-  FaGraduationCap
-} from "react-icons/fa";
+import { FaCube, FaCloud, FaStickyNote, FaGraduationCap } from "react-icons/fa";
+
+function getPlainText(element) {
+  if (typeof element === "string") {
+    return element;
+  }
+  if (Array.isArray(element)) {
+    return element.map(getPlainText).join("");
+  }
+  if (element && typeof element === "object" && "props" in element) {
+    return getPlainText(element.props.children);
+  }
+  return "";
+}
 
 function ProjectCards(props) {
   const {
@@ -21,23 +29,57 @@ function ProjectCards(props) {
     cubeLink,
     cloudLink,
     notesLink,
-    courseLink, // Added a comma here
+    courseLink,
     certificationLink,
+    alwaysShowDescription, 
+    isLinuxCourse,
+    isHackingCourse,
   } = props;
-  
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = () => setShowFullDescription(!showFullDescription);
+
+  const plainTextDescription = getPlainText(description);
+  let truncatedDescription;
+  if (title === "Cours d'Initiation à Linux") {
+    truncatedDescription = plainTextDescription.slice(0, 98) + "";
+  } else if (title === "Cours d'Initiation au Hacking") {
+    truncatedDescription = plainTextDescription.slice(0, 106) + "";
+  } else {
+    truncatedDescription =
+      plainTextDescription.length > 100
+        ? plainTextDescription.slice(0, 100) + "..."
+        : plainTextDescription;
+  }
+
+  const shouldShowFullDescription =
+    alwaysShowDescription || isLinuxCourse || isHackingCourse;
+
   return (
     <Card className="project-card-view">
       <Card.Img variant="top" src={imgPath} alt="card-img" />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
-          {description}
+          {shouldShowFullDescription || showFullDescription
+            ? description
+            : truncatedDescription}
         </Card.Text>
 
-        <br /> {/* Add a line break instead of {"\n"} for readability */}
-        <br /> {/* Another line break for spacing */}
+        {/* Ocultar el botón si siempre se debe mostrar la descripción */}
+        {!alwaysShowDescription && (
+          <Button
+            variant="link"
+            onClick={toggleDescription}
+            className="custom-info-button"
+          >
+            {showFullDescription ? "Réduire" : "Plus d'info"}
+          </Button>
+        )}
 
-        {/* Render Demo link if it's not a Blog */}
+        <br />
+        {/* Resto de los botones */}
         {!isBlog && demoLink && (
           <Button
             variant="primary"
@@ -48,8 +90,6 @@ function ProjectCards(props) {
             <CgWebsite /> &nbsp; Demo
           </Button>
         )}
-
-        {/* Add links with the new icons and corresponding properties */}
         {cubeLink && (
           <Button
             variant="primary"
@@ -60,7 +100,6 @@ function ProjectCards(props) {
             <FaCube /> &nbsp; HackTheBox
           </Button>
         )}
-
         {cloudLink && (
           <Button
             variant="primary"
@@ -71,9 +110,6 @@ function ProjectCards(props) {
             <FaCloud /> &nbsp; TryHackMe
           </Button>
         )}
-        
-        
-
         {notesLink && (
           <Button
             variant="primary"
@@ -84,7 +120,6 @@ function ProjectCards(props) {
             <FaStickyNote /> &nbsp; Hacking Notes
           </Button>
         )}
-
         {ghLink && (
           <Button
             variant="primary"
@@ -94,8 +129,7 @@ function ProjectCards(props) {
           >
             <BsGithub /> &nbsp; GitHub
           </Button>
-        )}  
-
+        )}
         {courseLink && (
           <Button
             variant="primary"
@@ -106,19 +140,16 @@ function ProjectCards(props) {
             <FaGraduationCap /> &nbsp; Cours
           </Button>
         )}
-
         {certificationLink && (
           <Button
             variant="primary"
             href={certificationLink}
             target="_blank"
             style={{ marginLeft: "10px" }}
-
           >
             <FaGraduationCap /> &nbsp; Certification
           </Button>
-        )}  
-
+        )}
       </Card.Body>
     </Card>
   );

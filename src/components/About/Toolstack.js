@@ -7,11 +7,12 @@ import BurpIcon from "../../Assets/Projects/Burpsuite.png";
 import MetaIcon from "../../Assets/Projects/Metasploit.png";
 import SqlIcon from "../../Assets/Projects/sqlmap.png";
 
-const icons = [
-  { icon: NmapIcon, alt: "Nmap Icon" },
-  { icon: BurpIcon, alt: "Burp Icon" },
-  { icon: MetaIcon, alt: "Meta Icon" },
-  { icon: SqlIcon, alt: "Sql Icon" },
+// Enlaces de las herramientas
+const toolLinks = [
+  { icon: NmapIcon, alt: "Nmap Icon", link: "https://nmap.org/" },
+  { icon: BurpIcon, alt: "Burp Icon", link: "https://portswigger.net/burp" },
+  { icon: MetaIcon, alt: "Meta Icon", link: "https://www.metasploit.com/" },
+  { icon: SqlIcon, alt: "Sql Icon", link: "https://sqlmap.org/" },
 ];
 
 function Toolstack() {
@@ -22,9 +23,11 @@ function Toolstack() {
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {icons.map((item, index) => (
+      {toolLinks.map((item, index) => (
         <Col key={index} xs={4} md={2} className="tech-icons">
-          <img src={item.icon} alt={item.alt} style={iconStyle} />
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <img src={item.icon} alt={item.alt} style={iconStyle} />
+          </a>
         </Col>
       ))}
     </Row>
