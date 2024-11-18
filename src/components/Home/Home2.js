@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/jordan.png";
-import homeLogo from "../../Assets/home-main.png";
-import Tilt from "react-parallax-tilt";
+import Tilt from "react-parallax-tilt";  // Asegúrate de que Tilt esté importado
 import {
   AiFillGithub,
 } from "react-icons/ai";
@@ -20,54 +19,62 @@ function Home2() {
               PERMETTEZ-MOI DE ME <span className="purple"><b>PRÉSENTER</b></span>
             </h1>
             <p className="home-about-body">
-            <b><span className="purple">Jordan Macia De Las Heras</span></b>
+              <b><span className="purple">Jordan Macia De Las Heras</span></b>
 
-            <br /> J'ai <span className="purple">20 ans</span> et je suis né en Andorre 🇦🇩, un micro-état où j'ai toujours vécu jusqu'à il y a trois ans. 
-            <br/> Mes langues maternelles sont l'<span className="purple">espagnol</span> et le <span className="purple">catalan</span>, ma langue scolaire est le <span className="purple">français</span> et j'ai également un bon niveau en <span className="purple">anglais</span>.
-            <br/><br/>Étudiant en troisième année 
-            
-                <b className="purple">  Bachelor </b>
-            
-            , option
-            
-                <b className="purple">  Cybersécurité </b>
-           
-            à
-           
-                <b className="purple">  Ynov Campus </b> Toulouse, abordant des disciplines telles que :
-            
-            <ul>
-            <br />
-
-              <li>Pentesting</li>
-              <li>Gouvernance de la sécurité</li>
-              <li>Sécurité des systèmes d'exploitation et des services</li>
-              <li>DevOps</li>
-            </ul>
-         <br />  Actuellement diplômé d'un <b className="purple"> BTS SIO option SISR </b>ou j'ai acquis des compétences tel que:
-         <ul>
-            <br />
-
-              <li>Administration système et réseau</li>
-              <li>Sécurisation des SI</li>
-              <li>Développement (Python, PHP, JavaScript...)</li>
-              <li>Bases de données (MySQL)</li>
-            </ul>
-
-    
+              <br /> J'ai <span className="purple">20 ans</span> et je suis né en Andorre 🇦🇩, un micro-état où j'ai toujours vécu jusqu'à il y a trois ans. 
+              <br/> Mes langues maternelles sont l'<span className="purple">espagnol</span> et le <span className="purple">catalan</span>, ma langue scolaire est le <span className="purple">français</span> et j'ai également un bon niveau en <span className="purple">anglais</span>.
+              <br/><br/>Étudiant en troisième année 
+              
+              <b className="purple">  Bachelor </b>
+              
+              , option
+              
+              <b className="purple">  Cybersécurité </b>
+             
+              à
+             
+              <b className="purple">  Ynov Campus </b> Toulouse, abordant des disciplines telles que :
+              
+              <ul>
               <br />
-              Pour la rentrée de 2025, j'ai l'intention de m'inscrire en<b> <span className="purple">Master Expert Cybersécurité</span></b> en <b><span className="purple">Alternance</span></b>, avec pour objectif de devenir un expert en cybersécurité, spécialisé dans l'aspect offensif, souvent désigné sous le nom de Pentester ou Red Teaming.
+
+                <li>Pentesting</li>
+                <li>Gouvernance de la sécurité</li>
+                <li>Sécurité des systèmes d'exploitation et des services</li>
+                <li>DevOps</li>
+              </ul>
+           <br />  Actuellement diplômé d'un <b className="purple"> BTS SIO option SISR </b>ou j'ai acquis des compétences tel que:
+           <ul>
+              <br />
+
+                <li>Administration système et réseau</li>
+                <li>Sécurisation des SI</li>
+                <li>Développement (Python, PHP, JavaScript...)</li>
+                <li>Bases de données (MySQL)</li>
+              </ul>
+
+      
+                <br />
+                Pour la rentrée de 2025, j'ai l'intention de m'inscrire en<b> <span className="purple">Master Expert Cybersécurité</span></b> en <b><span className="purple">Alternance</span></b>, avec pour objectif de devenir un expert en cybersécurité, spécialisé dans l'aspect offensif, souvent désigné sous le nom de Pentester ou Red Teaming.
             </p>
           </Col>
           
           <Col md={4} style={{ paddingBottom: 20 }}>
+            {/* Aquí envolvemos la imagen con el componente Tilt */}
+            <Tilt
+             // glareEnable={true} // Habilita el efecto de deslumbramiento
+             // glareMaxOpacity={0.5} // Ajusta la opacidad del resplandor
+              scale={1.05} // Ajusta el zoom al inclinar
+              style={{ maxHeight: "400px", marginTop: "85px" }}
+            >
               <img
-                src={homeLogo}
+                src={myImg}
                 alt="photo d'accueil"
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                style={{ maxHeight: "400px" }}
               />
-            </Col>
+            </Tilt>
+          </Col>
         </Row>
         <Row>
           <Col md={12} className="home-about-social">

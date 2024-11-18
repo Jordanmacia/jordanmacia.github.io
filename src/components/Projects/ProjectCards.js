@@ -31,7 +31,7 @@ function ProjectCards(props) {
     notesLink,
     courseLink,
     certificationLink,
-    alwaysShowDescription, 
+    alwaysShowDescription,
     isLinuxCourse,
     isHackingCourse,
   } = props;
@@ -49,9 +49,10 @@ function ProjectCards(props) {
   } else {
     truncatedDescription =
       plainTextDescription.length > 100
-        ? plainTextDescription.slice(0, 100) + "..."
+        ? plainTextDescription.slice(0, 97) + ""
         : plainTextDescription;
   }
+
 
   const shouldShowFullDescription =
     alwaysShowDescription || isLinuxCourse || isHackingCourse;
@@ -67,7 +68,6 @@ function ProjectCards(props) {
             : truncatedDescription}
         </Card.Text>
 
-        {/* Ocultar el botón si siempre se debe mostrar la descripción */}
         {!alwaysShowDescription && (
           <Button
             variant="link"
@@ -79,7 +79,6 @@ function ProjectCards(props) {
         )}
 
         <br />
-        {/* Resto de los botones */}
         {!isBlog && demoLink && (
           <Button
             variant="primary"

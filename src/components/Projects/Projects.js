@@ -55,7 +55,7 @@ function Projects() {
                   
                 </div>
               }
-              notesLink="https://hacking-notes-jordan.gitbook.io/notes"
+              notesLink="https://hacking-notes.jord4n.pro/"
               alwaysShowDescription={true}
             />
           </Col>
@@ -87,8 +87,9 @@ function Projects() {
               title={<strong>Cours d'Initiation au Hacking</strong>}
               description={
                 <div style={{ color: "white" }}>
-                  J'ai consacré environ 150 heures à ce cours avec beaucoup de
-                  pratique duquel j'ai exploré divers domaines:
+                  J'ai investi environ 150 heures dans ce cours, explorant divers domaines et beaucoup de pratique:
+
+
                   <br />
                   <br />
                   - <strong className="purple">Reconnaissance </strong> :
@@ -122,7 +123,7 @@ function Projects() {
               description={
                 <div style={{ color: "white" }}>
                   J'ai dédié environ 40 heures à ce cours, au cours duquel j'ai
-                  exploré divers domaines, notamment :
+                  exploré divers domaines, notamment:
                   <br />
                   <br />
                   - <strong className="purple">Bases de Linux </strong>: Commandes

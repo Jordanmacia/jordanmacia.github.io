@@ -3,7 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import Lottie from "lottie-react"; // Usando Lottie en vez de Player
+import hackerAnimation from "../../Assets/qrCode.json"; // Asegúrate de que la ruta sea correcta
 import Toolstack from "./Toolstack";
 import Platforms from "./Platforms";
 
@@ -22,7 +23,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-            <strong className="purple">$</strong> whoami
+              <strong className="purple">$</strong> whoami
             </h1>
             <Aboutcard />
           </Col>
@@ -31,7 +32,13 @@ function About() {
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            {/* Usando Lottie para la animación */}
+            <Lottie
+              animationData={hackerAnimation}
+              loop
+              autoplay
+              style={{ height: "200px", width: "200px", marginLeft: "70px" }}
+              />
           </Col>
         </Row>
         <h1 className="project-heading">
@@ -41,12 +48,12 @@ function About() {
         <Techstack />
 
         <h1 className="project-heading">
-        Les<strong className="purple"> Plateformes </strong> où je m'entraîne:
+          Les<strong className="purple"> Plateformes </strong> où je m'entraîne:
         </h1>
         <Platforms />
 
         <h1 className="project-heading">
-        Les<strong className="purple"> outils </strong> que j'utilise:
+          Les<strong className="purple"> outils </strong> que j'utilise:
         </h1>
         <Toolstack />
       </Container>
