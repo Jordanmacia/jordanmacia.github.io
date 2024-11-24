@@ -9,7 +9,7 @@ import PortIcon from "../../Assets/Projects/Portswigger.png";
 
 // Les liens vers les plateformes respectives
 const icons = [
-  { icon: HackpIcon, alt: "Hack Icon", link: "https://www.hackthebox/" },
+  { icon: HackpIcon, alt: "Hack Icon", link: "https://www.hackthebox.com/" },
   { icon: VulnIcon, alt: "Vuln Icon", link: "https://www.vulnhub.com/" },
   { icon: PortIcon, alt: "Port Icon", link: "https://portswigger.net/web-security/all-labs" },
 ];
