@@ -1,32 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.860144b4.css",
-    "main.js": "/static/js/main.fc160b49.js",
+    "main.css": "/static/css/main.bf38e97a.css",
+    "main.js": "/static/js/main.e7d2b086.js",
     "static/js/651.266d86e8.chunk.js": "/static/js/651.266d86e8.chunk.js",
+    "static/media/ejpt.png": "/static/media/ejpt.0a59aa2e303afe8f1768.png",
+    "static/media/hacking.png": "/static/media/hacking.06074a2a8ce47e606c1b.png",
+    "static/media/eWPT.png": "/static/media/eWPT.88ab77ff1a79b139d714.png",
+    "static/media/htb.png": "/static/media/htb.6c6a39bd4d1b1554cf5f.png",
     "static/media/introduction-hacking.png": "/static/media/introduction-hacking.657a31f8706b7f38b649.png",
+    "static/media/AI.png": "/static/media/AI.d6f72f90c745b0f28460.png",
     "static/media/CV-Jordan-MACIA.pdf": "/static/media/CV-Jordan-MACIA.a878c15c04b7a1f7f817.pdf",
     "static/media/jordan.png": "/static/media/jordan.be7889f7fae8de22023c.png",
-    "static/media/introduction-linux.png": "/static/media/introduction-linux.9788b2506e1aa93a3605.png",
-    "static/media/ejpt.png": "/static/media/ejpt.6cbc111eb018644e5c6d.png",
-    "static/media/home-main.png": "/static/media/home-main.1d1b1fd245ae0b6c2fc8.png",
-    "static/media/Hacking-notes.png": "/static/media/Hacking-notes.fce39acf1dc60702ff6c.png",
-    "static/media/htb.png": "/static/media/htb.6bdc0eea6e68043abaf3.png",
-    "static/media/scripts.png": "/static/media/scripts.4539608454f95c6af7ff.png",
-    "static/media/Nmap.png": "/static/media/Nmap.b416193b080550674ddf.png",
-    "static/media/Vulnhub.png": "/static/media/Vulnhub.2867ea795cd9fc75ef2c.png",
-    "static/media/Metasploit.png": "/static/media/Metasploit.9ea4110bed3868215960.png",
-    "static/media/sqlmap.png": "/static/media/sqlmap.f8670ad2394b50bf4b49.png",
-    "static/media/Hackthebox.png": "/static/media/Hackthebox.ff1a02a95ad5206d8897.png",
-    "static/media/Portswigger.png": "/static/media/Portswigger.5ef46190217072446266.png",
-    "static/media/Burpsuite.png": "/static/media/Burpsuite.c28c1221454f727f5da6.png",
     "static/media/pre.svg": "/static/media/pre.6f2a73bceed41174a5f8.svg",
     "index.html": "/index.html",
-    "main.860144b4.css.map": "/static/css/main.860144b4.css.map",
-    "main.fc160b49.js.map": "/static/js/main.fc160b49.js.map",
+    "main.bf38e97a.css.map": "/static/css/main.bf38e97a.css.map",
+    "main.e7d2b086.js.map": "/static/js/main.e7d2b086.js.map",
     "651.266d86e8.chunk.js.map": "/static/js/651.266d86e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.860144b4.css",
-    "static/js/main.fc160b49.js"
+    "static/css/main.bf38e97a.css",
+    "static/js/main.e7d2b086.js"
   ]
 }
