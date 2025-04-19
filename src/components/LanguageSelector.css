@@ -1,0 +1,71 @@
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  position: fixed;
+  right: 25px;
+  top: 85px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.flag-button {
+  background: none;
+  border: 2.5px solid transparent;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 36px;
+}
+
+.flag-button:hover {
+  transform: scale(1.12);
+  border-color: rgba(192, 58, 66, 0.7);
+  box-shadow: 0 0 12px rgba(192, 58, 66, 0.4);
+  background-color: rgba(192, 58, 66, 0.1);
+}
+
+.flag-button.active {
+  border-color: #C03A42;
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(192, 58, 66, 0.5);
+  background-color: rgba(192, 58, 66, 0.15);
+}
+
+.flag-button img {
+  width: 36px;
+  height: 24px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .language-selector {
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .flag-button {
+    width: 44px;
+    height: 32px;
+  }
+
+  .flag-button img {
+    width: 32px;
+    height: 20px;
+  }
+}

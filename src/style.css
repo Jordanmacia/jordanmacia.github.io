@@ -393,9 +393,7 @@ button:focus {
   display: inline-block !important;
   padding-right: 15px;
   padding-left: 15px;
-}
-
-.icon-colour {
+}.icon-colour {
   color: #860c0c !important;
 }
 
@@ -447,7 +445,7 @@ button:focus {
 /* --------- */
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 90px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
 }

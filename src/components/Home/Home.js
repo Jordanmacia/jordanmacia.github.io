@@ -1,29 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.png";
+import { useTranslation } from 'react-i18next';
 import Particle from "../Particle";
 import Home2 from "./Home2";
+import About from "./About";
+import Projects from "./Projects";
 import hackerAnimation from "../../Assets/hacker.json";
 import Type from "./Type";
-import Lottie from "lottie-react";  // Asegúrate de importar Lottie
+import Lottie from "lottie-react";
 
 function Home() {
+  const { t } = useTranslation();
+
+  // Fonction pour gérer le défilement vers la section correspondante
+  const scrollToSection = (hash) => {
+    if (hash === "#pro" || hash === "#about" || hash === "#home") {
+      const section = document.querySelector(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  // Utilisation de useEffect pour écouter les changements dans l'URL
+  useEffect(() => {
+    const handleHashChange = () => {
+      scrollToSection(window.location.hash);
+    };
+
+    // Déclencher le défilement au chargement initial de la page
+    handleHashChange();
+
+    // Écouter les changements de hash dans l'URL
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Nettoyer l'écouteur d'événement lors du démontage du composant
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   return (
     <section>
+      {/* Section Home */}
       <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15, marginLeft: "-5px" }} className="heading">
-                Salut!{" "}
+                {t('hello')}{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I'm
+                {t('im')}
                 <strong className="main-name"> Jordan</strong>
               </h1>
               <div style={{ padding: 45, textAlign: "left" }}>
@@ -31,7 +64,6 @@ function Home() {
               </div>
             </Col>
 
-            {/* Usando Lottie para la animación */}
             <Col md={5} style={{ paddingBottom: 20 }}>
               <Lottie
                 animationData={hackerAnimation}
@@ -40,7 +72,7 @@ function Home() {
                 style={{
                   height: "500px",
                   width: "500px",
-                  marginLeft: "-75px", // Ajuste para mover a la izquierda
+                  marginLeft: "-75px",
                 }}
               />
             </Col>
@@ -48,6 +80,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <Projects/>
     </section>
   );
 }

@@ -1,0 +1,136 @@
+.section-title {
+  font-size: 2.5em;
+  font-weight: 500;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff; /* Color blanco */
+}
+
+.home-about-body {
+  padding-top: 50px;
+  font-size: 1.2em !important;
+  line-height: 1.6;
+  color: #ffffff; /* Color blanco */
+  text-align: left;
+}
+
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.text-left {
+  text-align: justify;
+  padding-left: 0px;
+}
+
+.text-left li {
+  text-align: justify;
+  margin-left: -20px; /* Ajuste cette valeur selon le besoin */
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+  border-color: rgba(200, 137, 230, 0.883) !important;
+  box-shadow: 0 0 15px rgba(200, 137, 230, 0.4) !important;
+  color: #ffffff; /* Aseguramos que el texto en hover también sea blanco */
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  background-color: #ff000000;
+  box-shadow: 0 4px 8px rgba(255, 111, 111, 0.301);
+  color: #ffffff; /* Color blanco para el texto */
+}
+
+.card-body {
+  padding: 20px;
+  color: #ffffff; /* Color blanco para el texto dentro del cuerpo de la tarjeta */
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #ffffff; /* Color blanco para los títulos de las tarjetas */
+}
+
+.transparent-card {
+  background-color: transparent !important;
+  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+  color: white !important;
+}
+
+.transparent-card p {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+.transparent-card ul {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  padding-left: 20px;
+}
+
+.transparent-card li {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  margin-bottom: 8px;
+}
+
+.card ul {
+  padding-left: 20px;
+  text-align: left;
+  color: #ffffff; /* Color blanco para el texto en las listas */
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  list-style-position: inside;
+  color: #ffffff; /* Color blanco para los elementos de las listas */
+}
+
+.icon {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  color: #ffffff; /* Color blanco para los íconos */
+}
+
+/* Estilos para los títulos e íconos dentro de las tarjetas en hover */
+.card-hover:hover .card-body,
+.card-hover:hover .card ul li,
+.card-hover:hover .card h2,
+.card-hover:hover .card p {
+  color: #ffffff; /* Aseguramos que el texto se mantenga blanco incluso en hover */
+}
+
+/* Estilo para los íconos dentro de las tarjetas */
+.card h2 .icon {
+  color: #ffffff; /* Blanco para los íconos */
+}
+
+/* Estilos para los elementos en las pantallas de tamaño pequeño (móviles) */
+@media (max-width: 767px) {
+  .home-about-description {
+    padding-top: 0 !important;
+  }
+  
+  .section-title {
+    font-size: 2em;
+    padding-top: 20px;
+  }
+}
+
+.home-about-section {
+  position: relative;
+  padding-bottom: 70px !important;
+  padding-top: 70px !important;
+  background-image: var(--section-background-color) !important;
+}
+
+.home-about-description {
+  color: white !important;
+  padding-top: 100px !important;
+  padding-bottom: 20px !important;
+  text-align: center;
+}

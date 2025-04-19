@@ -3,8 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn, FaCube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md"; 
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const { t } = useTranslation();
   let date = new Date();
   let year = date.getFullYear();
   return (
@@ -12,7 +14,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright"></Col>
         <Col md="4" className="footer-copywright">
-          <h3>© Tous droits réservés par Jordan </h3>
+          <h3> {t('all_rights')} Jordan {year}</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
@@ -33,7 +35,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MdEmail /> {/* Use the email icon */}
+                <MdEmail />
               </a>
             </li>
            
