@@ -75,7 +75,25 @@ const highlightKeywords = (text) => {
     'Resolution of 5 Vulhub machines',
     'Additional tools',
     'Documentation'
+    ,
+    // Web Security Academy (keywords to highlight across languages)
+    'Web Security Academy',
+    'Web Security Academy - Labs',
+    '269',
+    'hands-on labs',
+    'laboratorios',
+    'laboratoires',
+    'laboratoris',
+    'labs',
+    '30',
+    'vulnerabilities',
+    'vulnérabilités',
+    'vulnerabilidades',
+    'Apprentice',
+    'Practitioner',
+    'Expert'
   ];
+
 
   // Primero manejamos los saltos de línea
   const lines = text.split('\n');
@@ -199,8 +217,8 @@ function ProjectCards(props) {
           )}
           {courseLink && (
             <Button variant="primary" href={courseLink} target="_blank">
-              <FaGraduationCap /> &nbsp;
-              {"Course"}
+              <FaStickyNote /> &nbsp;
+              {"Notes"}
             </Button>
           )}
           {certificationLink && (

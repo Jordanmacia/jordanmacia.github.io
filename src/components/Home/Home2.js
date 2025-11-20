@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaUser, FaGraduationCap, FaBriefcase, FaCertificate } from "react-icons/fa";
+import { FaGraduationCap, FaBriefcase, FaCertificate } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import "./HomeAndAbout.css";
 
@@ -32,8 +32,8 @@ function HomeAndAbout() {
         {/* Section 2: Career Details */}
         <Row className="mb-5">
           {/* Education */}
-          <Col md={4} sm={12} className="mb-4">
-            <Card className="h-100 card-hover transparent-card">
+            <Col md={4} sm={12} className="mb-4">
+            <Card className="h-100 card-hover transparent-card accent-section">
               <Card.Body>
                 <h2 className="purple"><FaGraduationCap className="icon" /> <strong>{t('education')}</strong></h2>
                 <p>
@@ -73,7 +73,7 @@ function HomeAndAbout() {
 
           {/* Professional Experience */}
           <Col md={4} sm={12} className="mb-4">
-            <Card className="h-100 card-hover transparent-card">
+            <Card className="h-100 card-hover transparent-card accent-section">
               <Card.Body>
                 <h2 className="purple">
                   <FaBriefcase className="icon" /> <strong>{t('professional_experience')}</strong>
@@ -108,7 +108,7 @@ function HomeAndAbout() {
 
           {/* Certifications */}
           <Col md={4} sm={12} className="mb-4">
-            <Card className="h-100 card-hover transparent-card">
+            <Card className="h-100 card-hover transparent-card accent-section">
               <Card.Body>
                 <h2 className="purple">
                   <FaCertificate className="icon" /> <strong>{t('certifications')}</strong>

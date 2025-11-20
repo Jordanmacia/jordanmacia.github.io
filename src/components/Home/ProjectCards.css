@@ -39,7 +39,7 @@
   color: #FF5259 !important;
   font-weight: 600;
   text-shadow: none;
-  display: inline-block;
+  display: inline;
 }
 
 .card-text ul {

@@ -3,14 +3,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/eWPT.png";
-import editor from "../../Assets/Projects/AI.png";
-import chatify from "../../Assets/Projects/htb.png";
-import suicide from "../../Assets/Projects/ejpt.png";
-import bitsOfCode from "../../Assets/Projects/introduction-hacking.png";
+import EWPT from "../../Assets/Projects/eWPT.png";
+import AI from "../../Assets/Projects/AI.png";
+import Htb from "../../Assets/Projects/htb.png";
+import Ejpt from "../../Assets/Projects/ejpt.png";
+import PortSwigger from "../../Assets/Projects/portswigger.jpg";
 import HackingNotes from "../../Assets/Projects/hacking.png";
 import { SocialLinks } from "./Toolstack";
-import { Toolstack } from "./Toolstack";
 
 function Projects() {
   const { t } = useTranslation();
@@ -31,7 +30,7 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={Htb}
               isBlog={false}
               title={<strong>{t('training_platform')}</strong>}
               description={
@@ -57,7 +56,7 @@ function Projects() {
           </Col>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={Ejpt}
               isBlog={false}
               title={<strong>{t('ejpt_cert')}</strong>}
               description={t('ejpt_description')}
@@ -70,31 +69,32 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={PortSwigger}
               isBlog={false}
-              title={<strong>{t('ewpt_cert')}</strong>}
-              description={t('ewpt_description')}
-              certificationLink="https://security.ine.com/certifications/ewpt-certification/"
-              alwaysShowDescription={true}
+              title={<strong>{t('websec_academy')}</strong>}
+              description={t('websec_academy_description')}
+              courseLink="https://hacking-notes.jord4n.pro/web-hacking-portswigger/web/"
+              alwaysShowDescription={false}
             />
           </Col>
           <Col md={4} className="project-card"> 
             <ProjectCard
-              imgPath={editor}
+              imgPath={AI}
               isBlog={false}
               title={<strong>{t('ai_project')}</strong>}
               description={t('ai_description')}
               alwaysShowDescription={false}
             />
           </Col>
-          <Col md={4} className="project-card">
+          
+            <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={EWPT}
               isBlog={false}
-              title={<strong>{t('hacking_course')}</strong>}
-              description={t('hacking_course_description')}
-              courseLink="https://hack4u.io/cursos/introduccion-al-hacking/"
-              alwaysShowDescription={false}
+              title={<strong>{t('ewpt_cert')}</strong>}
+              description={t('ewpt_description')}
+              certificationLink="https://security.ine.com/certifications/ewpt-certification/"
+              alwaysShowDescription={true}
             />
           </Col>
         </Row>

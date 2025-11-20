@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Particles from "react-tsparticles";
 
 function Particle() {
+  // Generate a stable unique id per mounted instance so multiple mounts
+  // or re-mounts don't conflict with the global `#tsparticles` id.
+  const particlesId = useMemo(
+    () => `tsparticles-${Math.random().toString(36).substr(2, 9)}`,
+    []
+  );
+
   return (
     <Particles
-      id="tsparticles"
+      id={particlesId}
+      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
       params={{
         particles: {
           number: {

@@ -44,9 +44,13 @@
   color: #ffffff; /* Color blanco para el texto */
 }
 
-.card-body {
+.accent-section .card-body {
   padding: 20px;
   color: #ffffff; /* Color blanco para el texto dentro del cuerpo de la tarjeta */
+  border: 1px solid var(--accent-border-fluor);
+  border-radius: 8px;
+  box-shadow: 0 0 2px var(--accent-border-glow);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .card h2 {
@@ -107,6 +111,37 @@
 /* Estilo para los íconos dentro de las tarjetas */
 .card h2 .icon {
   color: #ffffff; /* Blanco para los íconos */
+}
+
+/* Intensifier l'effet néon sur hover */
+.accent-section .card-hover:hover .card-body {
+  border-color: var(--accent-border-fluor) !important;
+  box-shadow: 0 0 10px var(--accent-border-glow) !important;
+}
+
+/* Si une carte a le focus (accessibilité), afficher aussi le néon */
+.accent-section .card:focus-within .card-body,
+.accent-section .card:focus .card-body {
+  border-color: var(--accent-border-fluor) !important;
+  box-shadow: 0 0 10px var(--accent-border-glow) !important;
+}
+
+/* Forzar bordes rojos fuertes en la propia tarjeta (elemento .transparent-card / .card-hover) */
+.accent-section.transparent-card {
+  border: 2px solid var(--accent-border-fluor) !important;
+  box-shadow: 0 0 8px var(--accent-border-glow) !important;
+}
+
+/* Hover/focus del elemento tarjeta */
+.accent-section.card-hover:hover,
+.accent-section.card-hover:focus {
+  border-color: var(--accent-border-fluor) !important;
+  box-shadow: 0 0 12px var(--accent-border-glow) !important;
+}
+
+/* Appliquer couleur accentuée (rouge) aux éléments marqués .purple uniquement dans ces sections */
+.accent-section .purple {
+  color: var(--accent-text-color) !important;
 }
 
 /* Estilos para los elementos en las pantallas de tamaño pequeño (móviles) */

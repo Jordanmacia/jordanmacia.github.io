@@ -12,6 +12,17 @@ html {
   );
 
   --imp-text-color: #da4048;
+  /* Couleur néon rouge (rouge fluo) et variante glow */
+  /* Tonalité rouge (moins rose) pour accents néon */
+  --neon-red: #ff2b2b;
+  --neon-red-glow: rgba(255, 43, 43, 0.189);
+  --accent-red: var(--neon-red);
+  /* Texto de secciones solicitado */
+  --accent-text-color: #d43e46;
+  /* Borde rojo fuerte fluor */
+  --accent-border-fluor: #ff0033;
+  /* Glow más suave para que no destaque tanto */
+  --accent-border-glow: rgba(255, 0, 51, 0.18);
 }
 
 .purple {

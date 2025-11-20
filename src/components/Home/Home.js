@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import Particle from "../Particle";
 import Home2 from "./Home2";
-import About from "./About";
 import Projects from "./Projects";
 import hackerAnimation from "../../Assets/hacker.json";
 import Type from "./Type";

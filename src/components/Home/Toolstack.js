@@ -21,7 +21,7 @@ function SocialLinks() {
         >
           <img
             src={myImg}
-            alt="photo d'accueil"
+            alt="Portrait of Jordan Macia"
             className="img-fluid"
             style={{ maxHeight: "300px", display: "block", margin: "auto" }}
           />
