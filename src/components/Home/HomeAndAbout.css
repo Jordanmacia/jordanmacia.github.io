@@ -169,3 +169,126 @@
   padding-bottom: 20px !important;
   text-align: center;
 }
+
+/* Certifications Visual Improvements */
+.cert-item {
+  background: rgba(218, 64, 72, 0.05);
+  border-left: 3px solid var(--accent-text-color);
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.cert-item:hover {
+  background: rgba(218, 64, 72, 0.1);
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cert-title {
+  font-weight: 600;
+  font-size: 1.05em;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-text-color);
+}
+
+.cert-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.cert-org {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.cert-date {
+  font-size: 0.85em;
+  color: #ffffff;
+  background: rgba(218, 64, 72, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* Timeline/Career Items */
+.timeline-item {
+  position: relative;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(218, 64, 72, 0.3);
+  text-align: left;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+  border-left: 1px solid transparent;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent-text-color);
+  box-shadow: 0 0 8px var(--accent-border-glow);
+}
+
+.timeline-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--accent-text-color);
+  margin-bottom: 2px;
+  display: block;
+}
+
+.timeline-subtitle {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.9;
+  display: block;
+}
+
+.timeline-date {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #ffffff;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-top: 8px !important;
+}
+
+.timeline-list li {
+  font-size: 0.88em !important;
+  position: relative;
+  padding-left: 15px !important;
+  margin-bottom: 5px !important;
+  line-height: 1.4 !important;
+  opacity: 0.85;
+}
+
+.timeline-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-text-color);
+  font-weight: bold;
+}

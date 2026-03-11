@@ -21,7 +21,6 @@ function HomeAndAbout() {
               <br />
               {t('about_intro_text')}
               <br />
-              {t('birth_place')}
               <br />
               {t('languages')}
               <br />
@@ -36,37 +35,27 @@ function HomeAndAbout() {
             <Card className="h-100 card-hover transparent-card accent-section">
               <Card.Body>
                 <h2 className="purple"><FaGraduationCap className="icon" /> <strong>{t('education')}</strong></h2>
-                <p>
-                  <b className="purple">{t('master_title')}</b>
-                  <br />
-                  <em>{t('master_school')}</em>
-                  <ul className="text-left">
-                    <li>{t('master_coming_soon')}</li>
-                  </ul>
+                <div className="timeline-container" style={{ paddingTop: "15px" }}>
+                  <div className="timeline-item">
+                    <span className="timeline-title">{t('master_title')}</span>
+                    <span className="timeline-subtitle">{t('master_school')}</span>
+                    <ul className="timeline-list">
+                      <li>{t('master_skill_tech')}</li>
+                      <li>{t('master_skill_gov')}</li>
+                      <li>{t('master_skill_infra')}</li>
+                    </ul>
+                  </div>
 
-                  <b className="purple">{t('bachelor_title')}</b>
-                  <br />
-                  <em>{t('bachelor_school')}</em>
-                  <br />
-                  <ul className="text-left">
-                    <br />
-                    <li>{t('bachelor_skill_1')}</li>
-                    <li>{t('bachelor_skill_2')}</li>
-                    <li>{t('bachelor_skill_3')}</li>
-                    <li>{t('bachelor_skill_4')}</li>
-                  </ul>
+                  <div className="timeline-item">
+                    <span className="timeline-title">{t('bachelor_title')}</span>
+                    <span className="timeline-subtitle">{t('bachelor_school')}</span>
+                  </div>
 
-                  <b className="purple">{t('bts_title')}</b>
-                  <br />
-                  <em>{t('bts_school')}</em>
-                  <br />
-                  <br />
-                  <ul className="text-left">
-                    <li>{t('bts_skill_1')}</li>
-                    <li>{t('bts_skill_2')}</li>
-                    <li>{t('bts_skill_3')}</li>
-                  </ul>
-                </p>
+                  <div className="timeline-item">
+                    <span className="timeline-title">{t('bts_title')}</span>
+                    <span className="timeline-subtitle">{t('bts_school')}</span>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -78,30 +67,28 @@ function HomeAndAbout() {
                 <h2 className="purple">
                   <FaBriefcase className="icon" /> <strong>{t('professional_experience')}</strong>
                 </h2>
-                <p>
-                  <b className="purple">{t('doomap_title')}</b>
-                  <br />
-                  <em>{t('doomap_period')}</em>
-                  <br />
-                  <ul className="text-left">
-                    <br />
-                    <li>{t('doomap_task_1')}</li>
-                    <li>{t('doomap_task_2')}</li>
-                    <li>{t('doomap_task_3')}</li>
-                    <li>{t('doomap_task_4')}</li>
-                  </ul>
+                <div className="timeline-container" style={{ paddingTop: "15px" }}>
+                  <div className="timeline-item">
+                    <span className="timeline-title">{t('doomap_title')}</span>
+                    <span className="timeline-date">{t('doomap_period')}</span>
+                    <ul className="timeline-list">
+                      <li>{t('doomap_task_1')}</li>
+                      <li>{t('doomap_task_2')}</li>
+                      <li>{t('doomap_task_3')}</li>
+                      <li>{t('doomap_task_4')}</li>
+                    </ul>
+                  </div>
 
-                  <b className="purple">{t('telecom_title')}</b>
-                  <br />
-                  <em>{t('telecom_period')}</em>
-                  <br />
-                  <ul className="text-left">
-                    <br />
-                    <li>{t('telecom_task_1')}</li>
-                    <li>{t('telecom_task_2')}</li>
-                    <li>{t('telecom_task_3')}</li>
-                  </ul>
-                </p>
+                  <div className="timeline-item">
+                    <span className="timeline-title">{t('telecom_title')}</span>
+                    <span className="timeline-date">{t('telecom_period')}</span>
+                    <ul className="timeline-list">
+                      <li>{t('telecom_task_1')}</li>
+                      <li>{t('telecom_task_2')}</li>
+                      <li>{t('telecom_task_3')}</li>
+                    </ul>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -113,26 +100,31 @@ function HomeAndAbout() {
                 <h2 className="purple">
                   <FaCertificate className="icon" /> <strong>{t('certifications')}</strong>
                 </h2>
-                <p>
-                  {t('certification_intro')}
-                  <br /><br />
-                  <ul>
-                    <li>
-                      <span className="purple">{t('ewpt_title')}</span> - {t('ewpt_date')}
-                      <ul>
-                        <li>{t('ewpt_desc_1')}</li>
-                        <li>{t('ewpt_desc_2')}</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <span className="purple">{t('ejpt_title')}</span> - {t('ejpt_date')}
-                      <ul>
-                        <li>{t('ejpt_desc_1')}</li>
-                        <li>{t('ejpt_desc_2')}</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </p>
+                <div className="certifications-container" style={{ paddingTop: "10px" }}>
+                  <div className="cert-item">
+                    <span className="cert-title">{t('ewptx_title')}</span>
+                    <div className="cert-info">
+                      <span className="cert-org">{t('ewptx_org')}</span>
+                      <span className="cert-date">{t('ewptx_date')}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="cert-item">
+                    <span className="cert-title">{t('bscp_title')}</span>
+                    <div className="cert-info">
+                      <span className="cert-org">{t('bscp_org')}</span>
+                      <span className="cert-date">{t('bscp_date')}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="cert-item">
+                    <span className="cert-title">{t('ejpt_title')}</span>
+                    <div className="cert-info">
+                      <span className="cert-org">{t('ejpt_org')}</span>
+                      <span className="cert-date">{t('ejpt_date')}</span>
+                    </div>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           </Col>

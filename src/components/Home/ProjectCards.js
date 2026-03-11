@@ -20,7 +20,8 @@ const highlightKeywords = (text) => {
     // Plataformas y marcas
     'HackTheBox',
     'EJPTv2',
-    'eWPT',
+    'eJPT',
+    'eWPTX',
     'Asterisk',
     'API Cloud Azure',
     'Google',
@@ -34,6 +35,8 @@ const highlightKeywords = (text) => {
     'Buffer overflow',
     'STT',
     'TTS',
+    'ASR',
+    'LLM',
     'IA',
     'AI',
 
@@ -134,8 +137,10 @@ function ProjectCards(props) {
   } = props;
 
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const toggleDescription = () => setShowFullDescription(!showFullDescription);
+  const toggleZoom = () => setIsZoomed(!isZoomed);
 
   const truncatedDescription = typeof description === 'string' ? 
     description.split('\n')[0] + "..." : 
@@ -145,9 +150,12 @@ function ProjectCards(props) {
     alwaysShowDescription || isLinuxCourse || isHackingCourse;
 
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={imgPath} alt="card-img" />
-      <Card.Body>
+    <>
+      <Card className="project-card-view">
+        <div className="card-img-container" onClick={toggleZoom} style={{ cursor: 'zoom-in' }}>
+          <Card.Img variant="top" src={imgPath} alt="card-img" />
+        </div>
+        <Card.Body>
         <Card.Title>{title}</Card.Title>
         <div className="project-content-wrapper">
           <div className="card-text" style={{ 
@@ -185,6 +193,12 @@ function ProjectCards(props) {
           flexWrap: 'wrap',
           justifyContent: 'center'
         }}>
+          {certificationLink && (
+            <Button variant="primary" href={certificationLink} target="_blank">
+              <FaGraduationCap /> &nbsp;
+              {t('btn_certification')}
+            </Button>
+          )}
           {ghLink && (
             <Button variant="primary" href={ghLink} target="_blank">
               <BsGithub /> &nbsp;
@@ -194,42 +208,46 @@ function ProjectCards(props) {
           {demoLink && (
             <Button variant="primary" href={demoLink} target="_blank">
               <CgWebsite /> &nbsp;
-              {"Demo"}
+              {t('btn_demo')}
             </Button>
           )}
           {cubeLink && (
             <Button variant="primary" href={cubeLink} target="_blank">
               <FaCube /> &nbsp;
-              {"HTB"}
+              {t('btn_htb')}
             </Button>
           )}
           {cloudLink && (
             <Button variant="primary" href={cloudLink} target="_blank">
               <FaCloud /> &nbsp;
-              {"Cloud"}
+              {t('btn_cloud')}
             </Button>
           )}
           {notesLink && (
             <Button variant="primary" href={notesLink} target="_blank">
               <FaStickyNote /> &nbsp;
-              {"Notes"}
+              {t('btn_notes')}
             </Button>
           )}
           {courseLink && (
-            <Button variant="primary" href={courseLink} target="_blank">
+            <Button variant="primary" href={courseLink} target={isLinuxCourse || isHackingCourse ? "_self" : "_blank"}>
               <FaStickyNote /> &nbsp;
-              {"Notes"}
-            </Button>
-          )}
-          {certificationLink && (
-            <Button variant="primary" href={certificationLink} target="_blank">
-              <FaGraduationCap /> &nbsp;
-              {"Certification"}
+              {t('btn_notes')}
             </Button>
           )}
         </div>
       </Card.Body>
     </Card>
+
+    {isZoomed && (
+      <div className="fullscreen-overlay" onClick={toggleZoom}>
+        <div className="fullscreen-image-container">
+          <img src={imgPath} alt="Fullscreen" className="fullscreen-image" />
+          <button className="close-zoom" onClick={toggleZoom}>&times;</button>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
 

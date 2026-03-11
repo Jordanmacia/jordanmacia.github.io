@@ -364,48 +364,43 @@ button:focus {
 
 .home-social-icons {
   position: relative !important;
-  display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
-  text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 2em !important;
-  background: rgba(255, 255, 255, 0.972) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 45px !important;
+  height: 45px !important;
+  font-size: 1.3em !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(218, 64, 72, 0.3) !important;
   border-radius: 50% !important;
-  transition: 0.5s !important;
-}
-
-.home-social-icons::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #bb262d;
-  transition: 0.5s;
-  transform: scale(0.9);
-  z-index: -1;
-}
-
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #951f1f;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  color: #ffffff !important;
 }
 
 .home-social-icons:hover {
-  color: #951f1f;
-  box-shadow: 0 0 5px #951f1f;
-  text-shadow: 0 0 2px #951f1f;
+  background: #da4048 !important;
+  border-color: #da4048 !important;
+  color: #ffffff !important;
+  transform: translateY(-5px) scale(1.1) !important;
+  box-shadow: 0 5px 15px rgba(218, 64, 72, 0.4) !important;
+}
+
+.home-social-icons::before {
+  display: none !important;
 }
 
 .social-icons {
   display: inline-block !important;
-  padding-right: 15px;
-  padding-left: 15px;
-}.icon-colour {
-  color: #860c0c !important;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.icon-colour {
+  color: #ffffff !important;
+}
+
+.icon-colour {
+  color: #ffffff !important;
 }
 
 /* --------- */

@@ -30,28 +30,23 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={Htb}
-              isBlog={false}
-              title={<strong>{t('training_platform')}</strong>}
-              description={
-                <>
-                  <strong className="highlight-text">HackTheBox</strong>
-                  {' '}
-                  {t('htb_description')}
-                </>
-              }
-              cubeLink="https://hackthebox.com/"
-              alwaysShowDescription={true}
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
               imgPath={HackingNotes}
               isBlog={false}
               title={<strong>{t('hacking_notes')}</strong>}
               description={t('notes_description')}
               notesLink="https://hacking-notes.jord4n.pro/"
               alwaysShowDescription={true}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={PortSwigger}
+              isBlog={false}
+              title={<strong>{t('websec_academy')}</strong>}
+              description={t('websec_academy_description')}
+              courseLink="https://hacking-notes.jord4n.pro/web-hacking-portswigger/web/"
+              certificationLink="https://portswigger.net/web-security/e/c/1095edc235a1c7d4"
+              alwaysShowDescription={false}
             />
           </Col>
           <Col md={4} className="project-card">
@@ -69,12 +64,28 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={PortSwigger}
+              imgPath={EWPT}
               isBlog={false}
-              title={<strong>{t('websec_academy')}</strong>}
-              description={t('websec_academy_description')}
-              courseLink="https://hacking-notes.jord4n.pro/web-hacking-portswigger/web/"
-              alwaysShowDescription={false}
+              title={<strong>{t('ewpt_cert')}</strong>}
+              description={t('ewpt_description')}
+              certificationLink="https://ine.com/security/certifications/ewptx-certification"
+              alwaysShowDescription={true}
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Htb}
+              isBlog={false}
+              title={<strong>{t('training_platform')}</strong>}
+              description={
+                <>
+                  <strong className="highlight-text">HackTheBox</strong>
+                  {' '}
+                  {t('htb_description')}
+                </>
+              }
+              cubeLink="https://app.hackthebox.com/profile/1345367"
+              alwaysShowDescription={true}
             />
           </Col>
           <Col md={4} className="project-card"> 
@@ -84,17 +95,6 @@ function Projects() {
               title={<strong>{t('ai_project')}</strong>}
               description={t('ai_description')}
               alwaysShowDescription={false}
-            />
-          </Col>
-          
-            <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={EWPT}
-              isBlog={false}
-              title={<strong>{t('ewpt_cert')}</strong>}
-              description={t('ewpt_description')}
-              certificationLink="https://security.ine.com/certifications/ewpt-certification/"
-              alwaysShowDescription={true}
             />
           </Col>
         </Row>
