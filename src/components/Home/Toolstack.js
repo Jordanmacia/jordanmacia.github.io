@@ -49,7 +49,7 @@ function SocialLinks() {
           </li>
           <li className="social-icons">
             <a
-              href="https://app.hackthebox.com/profile/1345367"
+              href="https://app.hackthebox.com/users/1345367"
               target="_blank"
               rel="noreferrer"
               className="icon-colour home-social-icons"

@@ -21,7 +21,7 @@ const highlightKeywords = (text) => {
     'HackTheBox',
     'EJPTv2',
     'eJPT',
-    'eWPTX',
+    'CWES',
     'Asterisk',
     'API Cloud Azure',
     'Google',

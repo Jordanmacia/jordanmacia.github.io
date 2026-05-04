@@ -43,4 +43,4 @@ npm start       # http://localhost:3000
 
 [![Email](https://img.shields.io/badge/email-jordanmacia@protonmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jordanmacia@protonmail.com)  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Jordan%20Macia-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jordanmacia)  
-[![Hack The Box](https://img.shields.io/badge/Hack%20The%20Box-Profile-9F2B68?style=for-the-badge&logo=hackthebox&logoColor=white)](https://app.hackthebox.com/profile/1345367)
+[![Hack The Box](https://img.shields.io/badge/Hack%20The%20Box-Profile-9F2B68?style=for-the-badge&logo=hackthebox&logoColor=white)](https://app.hackthebox.com/users/1345367)

@@ -9,7 +9,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     
-    <!-- Language versions for Google -->
+    <!-- Language versions -->
     <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/" />

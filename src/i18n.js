@@ -42,12 +42,12 @@ const resources = {
       "recent_projects": "Voici quelques projets sur lesquels j'ai récemment travaillé",
       "training_platform": "Plateforme d'Entraînement",
       "htb_description": "est une plateforme sur laquelle je m'entraîne régulièrement, en affrontant des environnements réels qui présentent diverses situations et défis, tels que l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges.",
-      "hacking_notes": "Hacking Notes ",
+      "hacking_notes": "Hacking Notes",
       "notes_description": "Mon site web dédié à la cybersécurité offensive, où je partage mes connaissances et recherches sur la sécurité des applications web, l'exploitation de vulnérabilités, la résolution d'énigmes de sécurité et l'élévation de privilèges.",
       "ejpt_cert": "Certification eJPT",
       "ejpt_description": "En avril 2025, j'ai obtenu la certification EJPTv2 (eLearnSecurity Junior Penetration Tester), dédiée aux personnes débutant dans le pentesting, après avoir passé un examen pratique de 48 heures. Cette certification valide mes compétences avancées en identification et exploitation de vulnérabilités.",
-      "ewpt_cert": "Certification eWPTX",
-      "ewpt_description": "Actuellement en préparation pour la certification eWPTX, un examen de 18 heures qui évalue la capacité à réaliser un pentest complet sur des applications web.",
+      "ewpt_cert": "Certification CWES",
+      "ewpt_description": "Certification CWES (Certified Web Exploitation Specialist) de Hack The Box, de niveau avancé, obtenue à l'issue d'un examen pratique d'une semaine incluant exploitation de vulnérabilités web et rédaction d'un rapport technique complet.",
       "ai_project": "Projet d'intelligence artificielle",
       "ai_description": "Développement d'une solution IA pour Asterisk (VOIP) visant à automatiser la gestion des alarmes et des appels. L'objectif, en utilisant des API d'intelligence artificielle, est d'intégrer des technologies de reconnaissance vocale (ASR), de synthèse vocale (TTS), de génération de réponses via LLM, ainsi qu'un serveur d'IA capable d'analyser les situations et de prendre des décisions de manière autonome. Le but final est de réduire et filtrer jusqu'à 90 % des appels résultant d'erreurs de manipulation de la part des clients.",
       "websec_academy": "Certification BSCP",
@@ -76,7 +76,7 @@ const resources = {
       "doomap_title": "Alternance chez Doomap",
       "doomap_period": "(Déc. 2024 - Aujourd'hui)",
       "doomap_task_1": "Audit de cybersécurité et restructuration interne",
-      "doomap_task_2": "Déploiement IA sur telephonie VOIP (ASR, LLM, Text-to-Speech)",
+      "doomap_task_2": "Déploiement IA sur téléphonie VOIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Installation, gestion et maintenance des infrastructures informatiques",
       "doomap_task_4": "Développement Node, React, Python, PHP, CSS, SQL",
       "telecom_title": "Stage Andorra Telecom",
@@ -88,9 +88,9 @@ const resources = {
       // Certifications
       "certifications": "Certifications",
       "certification_intro": "",
-      "ewptx_title": "eWPTX (Web Application Penetration Tester eXtreme)",
-      "ewptx_org": "INE SECURITY",
-      "ewptx_date": "En cours de préparation",
+      "ewptx_title": "CWES (Certified Web Exploitation Specialist)",
+      "ewptx_org": "HACKTHEBOX",
+      "ewptx_date": "Mai 2026",
       "bscp_title": "BSCP (Burp Suite Certified Practitioner)",
       "bscp_org": "PORTSWIGGER",
       "bscp_date": "Mars 2026",
@@ -158,8 +158,8 @@ const resources = {
       "notes_description": "Este es mi sitio web dedicado a la ciberseguridad ofensiva, donde comparto mis conocimientos e investigaciones sobre la seguridad de las aplicaciones web, la explotación de vulnerabilidades, la resolución de enigmas de seguridad y la elevación de privilegios.",
       "ejpt_cert": "Certificación eJPT",
       "ejpt_description": "En abril de 2025, obtuve la certificación EJPTv2 (eLearnSecurity Junior Penetration Tester), dedicada a personas que se inician en el pentesting, después de pasar un examen práctico de 48 horas. Esta certificación valida mis habilidades avanzadas en identificación y explotación de vulnerabilidades.",
-      "ewpt_cert": "Certificación eWPTX",
-      "ewpt_description": "Actualmente en preparación para la certificación eWPTX, un examen de 18 horas que evalúa la capacidad de realizar un pentest completo en aplicaciones web.",
+      "ewpt_cert": "Certificación CWES",
+      "ewpt_description": "Certificación CWES (Certified Web Exploitation Specialist) de Hack The Box, de nivel avanzado, obtenida tras un examen práctico de una semana que incluye explotación de vulnerabilidades web y redacción de un informe técnico completo.",
       "ai_project": "Proyecto de inteligencia artificial",
       "ai_description": "Desarrollo de una solución de IA para Asterisk (VOIP) con el objetivo de automatizar la gestión de alarmas y llamadas. El objetivo, mediante el uso de APIs de inteligencia artificial, es integrar tecnologías de reconocimiento de voz (ASR), síntesis de voz (TTS) y generación de respuestas a través de LLM, junto con un servidor de IA capaz de analizar situaciones y tomar decisiones de forma autónoma. El objetivo final es reducir y filtrar hasta el 90% de las llamadas derivadas de errores de manipulación por parte de los clientes.",
       "hacking_course": "Curso de Iniciación al Hacking",
@@ -175,7 +175,7 @@ const resources = {
       
       // Education
       "education": "Estudios",
-      "master_title": "Mastère Experto en Ciberseguridad (Alternancia)",
+      "master_title": "Máster Experto en Ciberseguridad (Alternancia)",
       "master_school": "Ynov Campus (2025-2027)",
       "master_skill_tech": "Técnica: Pentesting, Ingeniería Inversa, Seguridad Cloud y Vulnerabilidades Web/Software.",
       "master_skill_gov": "Gobernanza y GRC: SGSI, PCA/PRA, Gobernanza y Cyber Threat Intelligence (CTI)",
@@ -190,7 +190,7 @@ const resources = {
       "doomap_title": "Prácticas duales en Doomap",
       "doomap_period": "(Dic. 2024 - Actualidad)",
       "doomap_task_1": "Auditoría de ciberseguridad y fortalecimiento interno",
-      "doomap_task_2": "Despliegue de IA en telefonía VOIP (ASR, LLM, Text-to-Speech)",
+      "doomap_task_2": "Despliegue de IA en telefonía VoIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Instalación, gestión y mantenimiento de infraestructuras informáticas",
       "doomap_task_4": "Desarrollo en Python, PHP, JavaScript, SQL",
       "telecom_title": "Prácticas en Andorra Telecom",
@@ -202,9 +202,9 @@ const resources = {
       // Certifications
       "certifications": "Certificaciones",
       "certification_intro": "",
-      "ewptx_title": "eWPTX (Web Application Penetration Tester eXtreme)",
-      "ewptx_org": "INE SECURITY",
-      "ewptx_date": "En curso de preparación",
+      "ewptx_title": "CWES (Certified Web Exploitation Specialist)",
+      "ewptx_org": "HACKTHEBOX",
+      "ewptx_date": "Mayo 2026",
       "bscp_title": "BSCP (Burp Suite Certified Practitioner)",
       "bscp_org": "PORTSWIGGER",
       "bscp_date": "Marzo 2026",
@@ -272,8 +272,8 @@ const resources = {
       "notes_description": "Aquest és el meu lloc web dedicat a la ciberseguretat ofensiva, on comparteixo els meus coneixements i investigacions sobre la seguretat de les aplicacions web, l'explotació de vulnerabilitats, la resolució d'enigmes de seguretat i l'elevació de privilegis.",
       "ejpt_cert": "Certificació eJPT",
       "ejpt_description": "A l'abril de 2025, vaig obtenir la certificació EJPTv2 (eLearnSecurity Junior Penetration Tester), dedicada a persones que s'inicien en el pentesting, després de passar un examen pràctic de 48 hores. Aquesta certificació valida les meves habilitats avançades en identificació i explotació de vulnerabilitats.",
-      "ewpt_cert": "Certificació eWPTX",
-      "ewpt_description": "Actualment en preparació per a la certificació eWPTX, un examen de 18 hores que avalua la capacitat de realitzar un pentest complet en aplicacions web.",
+      "ewpt_cert": "Certificació CWES",
+      "ewpt_description": "Certificació CWES (Certified Web Exploitation Specialist) de Hack The Box, de nivell avançat, obtinguda després d'un examen pràctic d'una setmana que inclou explotació de vulnerabilitats web i redacció d'un informe tècnic complet.",
       "ai_project": "Projecte d'intel·ligència artificial",
       "ai_description": "Desenvolupament d'una solució d'IA per a Asterisk (VOIP) amb l'objectiu d'automatitzar la gestió d'alarmes i trucades. L'objectiu, mitjançant l'ús d'APIs d'intel·ligència artificial, és integrar tecnologies de reconeixement de veu (ASR), síntesi de veu (TTS) i generació de respostes a través de LLM, juntament amb un servidor d'IA capaç d'analitzar situacions i prendre decisions de forma autònoma. L'objectiu final és reduir i filtrar fins al 90% de les trucades derivades d'errors de manipulació per part dels clients.",
       "hacking_course": "Curs d'Iniciació al Hacking",
@@ -304,7 +304,7 @@ const resources = {
       "doomap_title": "Pràctiques duals a Doomap",
       "doomap_period": "(Desembre 2024 - Actualitat)",
       "doomap_task_1": "Auditoria de ciberseguretat i enfortiment intern",
-      "doomap_task_2": "Desplegament d'IA en telefonia VOIP (ASR, LLM, Text-to-Speech)",
+      "doomap_task_2": "Desplegament d'IA en telefonia VoIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Instal·lació, gestió i manteniment d'infraestructures informàtiques",
       "doomap_task_4": "Desenvolupament en Python, PHP, JavaScript, SQL",
       "telecom_title": "Pràctiques a Andorra Telecom",
@@ -316,9 +316,9 @@ const resources = {
       // Certifications
       "certifications": "Certificacions",
       "certification_intro": "",
-      "ewptx_title": "eWPTX (Web Application Penetration Tester eXtreme)",
-      "ewptx_org": "INE SECURITY",
-      "ewptx_date": "En curs de preparació",
+      "ewptx_title": "CWES (Certified Web Exploitation Specialist)",
+      "ewptx_org": "HACKTHEBOX",
+      "ewptx_date": "Maig 2026",
       "bscp_title": "BSCP (Burp Suite Certified Practitioner)",
       "bscp_org": "PORTSWIGGER",
       "bscp_date": "Març 2026",
@@ -386,13 +386,13 @@ const resources = {
       "notes_description": "My website dedicated to offensive cybersecurity, where I share my knowledge and research on web application security, vulnerability exploitation, security puzzle solving, and privilege escalation.",
       "ejpt_cert": "eJPT Certification",
       "ejpt_description": "In April 2025, I obtained the EJPTv2 (eLearnSecurity Junior Penetration Tester) certification, dedicated to people starting in pentesting, after passing a 48-hour practical exam. This certification validates my advanced skills in vulnerability identification and exploitation.",
-      "ewpt_cert": "eWPTX Certification",
-      "ewpt_description": "Currently preparing for the eWPTX certification, an 18-hour exam that evaluates the ability to perform a complete pentest on web applications.",
+      "ewpt_cert": "CWES Certification",
+      "ewpt_description": "CWES (Certified Web Exploitation Specialist) certification from Hack The Box, advanced level, obtained after a one-week practical exam including web vulnerability exploitation and complete technical report writing.",
       "ai_project": "Artificial Intelligence Project",
-      "ai_description": "Development of an AI solution for Asterisk (VOIP) aiming to automate alarm and call management. The goal, through the use of artificial intelligence APIs, is to integrate voice recognition (ASR), speech synthesis (TTS), and response generation via LLM, along with an AI server capable of analyzing situations and making decisions autonomously. The final objective is to reduce and filter up to 90% of calls resulting from customer handling errors.",
+      "ai_description": "Development of an AI solution for Asterisk (VoIP) aiming to automate alarm and call management. The goal, through the use of artificial intelligence APIs, is to integrate voice recognition (ASR), speech synthesis (TTS), and response generation via LLM, along with an AI server capable of analyzing situations and making decisions autonomously. The final objective is to reduce and filter up to 90% of calls resulting from customer handling errors.",
       "hacking_course": "Introduction to Hacking Course",
       "hacking_course_description": "I invested approximately 150 hours in this course, exploring various areas and lots of hands-on practice:\n\n- Reconnaissance : Network exploration, web enumeration, web technology identification, etc.\n\n- Service and CMS vulnerabilities : FTP, SSH, SMB, WordPress, Joomla, Drupal, etc.\n\n- OWASP TOP 10 and web vulnerabilities : SQLI, XSS, XXE, LFI, NoSQL, API abuse, etc.\n\n- Privilege Escalation : Sudoers, SUID, PATH Hijacking, Kernel, and special groups, etc.\n\n- Buffer overflow : I gained a deep understanding of the buffer overflow technique.\n\n- Resolution of 5 Vulhub machines : I put my knowledge into practice with five vulhub machines.\n\n- Additional tools : I was introduced to additional tools such as Metasploit, SQLmap and pivoting techniques.\n\n- Documentation : Acquisition of professional report writing skills using LaTeX.",
-      "websec_academy": "Certification BSCP",
+      "websec_academy": "BSCP Certification",
       "websec_academy_description": "Obtained the BSCP (Burp Suite Certified Practitioner) certification in web hacking through the Web Security Academy, which offers over 269 hands-on labs and covers more than 30 vulnerability types. Below you will find all my notes and studied materials for all levels: Apprentice, Practitioner, and Expert.",
       
       // Home2 Component
@@ -403,7 +403,7 @@ const resources = {
       
       // Education
       "education": "Education",
-      "master_title": "Mastère Expert Cybersecurity (Work-Study)",
+      "master_title": "Master's Expert Cybersecurity (Work-Study)",
       "master_school": "Ynov Campus (2025-2027)",
       "master_skill_tech": "Technique: Pentesting, Reverse Engineering, Cloud Security, and Web/Software Vulnerabilities.",
       "master_skill_gov": "Governance & GRC: ISMS, BCP/DRP, Governance, and Cyber Threat Intelligence (CTI)",
@@ -418,7 +418,7 @@ const resources = {
       "doomap_title": "Work-Study at Doomap",
       "doomap_period": "(Dec 2024 - Present)",
       "doomap_task_1": "Cybersecurity audit and internal strengthening",
-      "doomap_task_2": "AI deployment on VOIP telephony (ASR, LLM, Text-to-Speech)",
+      "doomap_task_2": "AI deployment on VoIP telephony (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Installation, management and maintenance of IT infrastructures",
       "doomap_task_4": "Development in Python, PHP, JavaScript, SQL",
       "telecom_title": "Internship at Andorra Telecom",
@@ -430,9 +430,9 @@ const resources = {
       // Certifications
       "certifications": "Certifications",
       "certification_intro": "",
-      "ewptx_title": "eWPTX (Web Application Penetration Tester eXtreme)",
-      "ewptx_org": "INE SECURITY",
-      "ewptx_date": "In preparation",
+      "ewptx_title": "CWES (Certified Web Exploitation Specialist)",
+      "ewptx_org": "HACKTHEBOX",
+      "ewptx_date": "May 2026",
       "bscp_title": "BSCP (Burp Suite Certified Practitioner)",
       "bscp_org": "PORTSWIGGER",
       "bscp_date": "March 2026",
@@ -462,11 +462,28 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'fr', // default language
-    fallbackLng: 'fr',
+    lng: 'en', // Default language
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false
     }
   });
+
+// Detect browser language and set if supported (cross-browser compatible)
+const getBrowserLanguage = () => {
+  // Try multiple methods for maximum browser compatibility
+  const lang = navigator.language || 
+               navigator.userLanguage || 
+               navigator.browserLanguage || 
+               navigator.systemLanguage ||
+               'en';
+  return lang.split('-')[0].toLowerCase();
+};
+
+const browserLang = getBrowserLanguage();
+const supportedLangs = ['fr', 'es', 'ad', 'en'];
+if (supportedLangs.includes(browserLang) && browserLang !== 'en') {
+  i18n.changeLanguage(browserLang);
+}
 
 export default i18n;

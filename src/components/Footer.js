@@ -41,7 +41,7 @@ function Footer() {
            
             <li className="social-icons">
             <a
-            href="https://app.hackthebox.com/profile/1345367"
+            href="https://app.hackthebox.com/users/1345367"
             style={{ color: "white" }}
             target="_blank"
             rel="noopener noreferrer"

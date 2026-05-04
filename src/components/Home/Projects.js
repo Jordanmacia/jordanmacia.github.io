@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import EWPT from "../../Assets/Projects/eWPT.png";
+import CWES from "../../Assets/Projects/CWES.png";
 import AI from "../../Assets/Projects/AI.png";
 import Htb from "../../Assets/Projects/htb.png";
 import Ejpt from "../../Assets/Projects/ejpt.png";
@@ -51,11 +51,11 @@ function Projects() {
           </Col>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={Ejpt}
+              imgPath={CWES}
               isBlog={false}
-              title={<strong>{t('ejpt_cert')}</strong>}
-              description={t('ejpt_description')}
-              certificationLink="https://certs.ine.com/41b85729-a887-4a15-bd05-16ad3e6aca84#acc.EDitTVXy"
+              title={<strong>{t('ewpt_cert')}</strong>}
+              description={t('ewpt_description')}
+              certificationLink="https://www.credly.com/badges/db68575b-8a45-471d-9cfb-2a0e5df0c0f8"
               alwaysShowDescription={true}
             />
           </Col>
@@ -64,11 +64,11 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={EWPT}
+              imgPath={Ejpt}
               isBlog={false}
-              title={<strong>{t('ewpt_cert')}</strong>}
-              description={t('ewpt_description')}
-              certificationLink="https://ine.com/security/certifications/ewptx-certification"
+              title={<strong>{t('ejpt_cert')}</strong>}
+              description={t('ejpt_description')}
+              certificationLink="https://certs.ine.com/41b85729-a887-4a15-bd05-16ad3e6aca84#acc.EDitTVXy"
               alwaysShowDescription={true}
             />
           </Col>
@@ -84,7 +84,7 @@ function Projects() {
                   {t('htb_description')}
                 </>
               }
-              cubeLink="https://app.hackthebox.com/profile/1345367"
+              cubeLink="https://app.hackthebox.com/users/1345367"
               alwaysShowDescription={true}
             />
           </Col>

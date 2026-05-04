@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import LanguageSelector from "./components/LanguageSelector";
+import DynamicFavicon from "./components/DynamicFavicon";
+import SEOHead from "./components/SEOHead";
 import {
   BrowserRouter as Router,
   Route,
@@ -30,6 +32,8 @@ function App() {
 
   return (
     <Router>
+      <SEOHead />
+      <DynamicFavicon />
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
