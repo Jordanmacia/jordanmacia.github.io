@@ -69,6 +69,16 @@ function HomeAndAbout() {
                 </h2>
                 <div className="timeline-container" style={{ paddingTop: "15px" }}>
                   <div className="timeline-item">
+                    <span className="timeline-title">{t('orange_title')}</span>
+                    <span className="timeline-date">{t('orange_period')}</span>
+                    <ul className="timeline-list">
+                      <li>{t('orange_task_1')}</li>
+                      <li>{t('orange_task_2')}</li>
+                      <li>{t('orange_task_3')}</li>
+                    </ul>
+                  </div>
+
+                  <div className="timeline-item">
                     <span className="timeline-title">{t('doomap_title')}</span>
                     <span className="timeline-date">{t('doomap_period')}</span>
                     <ul className="timeline-list">

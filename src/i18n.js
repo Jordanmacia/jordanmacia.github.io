@@ -55,7 +55,7 @@ const resources = {
       
       // Home2 Component
       "full_name": "Jordan Macia De Las Heras",
-      "about_intro_text": "Passionné par la cybersécurité et le pentest, avec de solides bases en réseaux et développement. Je travaille avec rigueur et méthode, en accordant une grande importance à la documentation technique, à la précision et à la veille technologique. Recherche une alternance en pentest pour ma dernière année de Master (12 mois – rythme : 2 semaines entreprise / 1 semaine école).",
+      "about_intro_text": "Passionné par la cybersécurité et le pentest, avec de solides bases en réseaux et développement. Je travaille avec rigueur et méthode, en accordant une grande importance à la documentation technique, à la précision et à la veille technologique.",
       "birth_place": "",
       "languages": "Langues : Espagnol, Catalan, Français, Anglais.",
       
@@ -74,7 +74,7 @@ const resources = {
       // Professional Experience
       "professional_experience": "Expériences pro",
       "doomap_title": "Alternance chez Doomap",
-      "doomap_period": "(Déc. 2024 - Aujourd'hui)",
+      "doomap_period": "(Déc. 2024 - Août 2026)",
       "doomap_task_1": "Audit de cybersécurité et restructuration interne",
       "doomap_task_2": "Déploiement IA sur téléphonie VOIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Installation, gestion et maintenance des infrastructures informatiques",
@@ -84,6 +84,11 @@ const resources = {
       "telecom_task_1": "Gestion des alertes et journaux (SIEM ELK, EDR Defender, Netskope)",
       "telecom_task_2": "Support NOC/SOC (traitement des alarmes et alertes)",
       "telecom_task_3": "Analyse et réponse aux incidents de sécurité",
+      "orange_title": "Alternance Pentester chez Orange Cyberdefense",
+      "orange_period": "(Sept. 2026 - Aujourd'hui)",
+      "orange_task_1": "Tests de pénétration et audits de sécurité",
+      "orange_task_2": "Identification et exploitation de vulnérabilités",
+      "orange_task_3": "Rédaction de rapports techniques détaillés",
       
       // Certifications
       "certifications": "Certifications",
@@ -169,7 +174,7 @@ const resources = {
       
       // Home2 Component
       "full_name": "Jordan Macia De Las Heras",
-      "about_intro_text": "Apasionado por la ciberseguridad y el pentesting, con sólidas bases en redes y desarrollo. Trabajo con rigor y método, dando gran importancia a la documentación técnica, la precisión y la vigilancia tecnológica. Busco una alternancia en pentesting para mi último año de Máster (12 meses – ritmo: 2 semanas empresa / 1 semana escuela).",
+      "about_intro_text": "Apasionado por la ciberseguridad y el pentesting, con sólidas bases en redes y desarrollo. Trabajo con rigor y método, dando gran importancia a la documentación técnica, la precisión y la vigilancia tecnológica.",
       "birth_place": "",
       "languages": "Idiomas: Español, Catalán, Francés, Inglés",
       
@@ -188,7 +193,7 @@ const resources = {
       // Professional Experience
       "professional_experience": "Experiencia profesional",
       "doomap_title": "Prácticas duales en Doomap",
-      "doomap_period": "(Dic. 2024 - Actualidad)",
+      "doomap_period": "(Dic. 2024 - Agosto 2026)",
       "doomap_task_1": "Auditoría de ciberseguridad y fortalecimiento interno",
       "doomap_task_2": "Despliegue de IA en telefonía VoIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Instalación, gestión y mantenimiento de infraestructuras informáticas",
@@ -198,6 +203,11 @@ const resources = {
       "telecom_task_1": "Gestión de alertas y logs (SIEM ELK, EDR Defender, Netskope)",
       "telecom_task_2": "Soporte NOC/SOC (procesamiento de alarmas y alertas)",
       "telecom_task_3": "Análisis y respuesta a incidentes de seguridad",
+      "orange_title": "Alternance Pentester en Orange Cyberdefense",
+      "orange_period": "(Sept. 2026 - Hoy)",
+      "orange_task_1": "Tests de penetración y auditorías de seguridad",
+      "orange_task_2": "Identificación y explotación de vulnerabilidades",
+      "orange_task_3": "Redacción de informes técnicos detallados",
       
       // Certifications
       "certifications": "Certificaciones",
@@ -283,7 +293,7 @@ const resources = {
       
       // Home2 Component
       "full_name": "Jordan Macia De Las Heras",
-      "about_intro_text": "Apassionat per la ciberseguretat i el pentesting, amb sòlides bases en xarxes i desenvolupament. Treballo amb rigor i mètode, donant gran importància a la documentació tècnica, la precisió i la vigilància tecnològica. Busco una alternança en pentesting per al meu últim any de Màster (12 mesos – ritme: 2 setmanes empresa / 1 setmana escola).",
+      "about_intro_text": "Apassionat per la ciberseguretat i el pentesting, amb sòlides bases en xarxes i desenvolupament. Treballo amb rigor i mètode, donant gran importància a la documentació tècnica, la precisió i la vigilància tecnològica.",
       "birth_place": "",
       "languages": "Idiomes: Espanyol, Català, Francès, Anglès",
       
@@ -302,7 +312,7 @@ const resources = {
       // Professional Experience
       "professional_experience": "Experiència professional",
       "doomap_title": "Pràctiques duals a Doomap",
-      "doomap_period": "(Desembre 2024 - Actualitat)",
+      "doomap_period": "(Desembre 2024 - Agost 2026)",
       "doomap_task_1": "Auditoria de ciberseguretat i enfortiment intern",
       "doomap_task_2": "Desplegament d'IA en telefonia VoIP (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Instal·lació, gestió i manteniment d'infraestructures informàtiques",
@@ -312,6 +322,11 @@ const resources = {
       "telecom_task_1": "Gestió d'alertes i logs (SIEM ELK, EDR Defender, Netskope)",
       "telecom_task_2": "Suport NOC/SOC (processament d'alarmes i alertes)",
       "telecom_task_3": "Anàlisi i resposta a incidents de seguretat",
+      "orange_title": "Alternance Pentester a Orange Cyberdefense",
+      "orange_period": "(Sept. 2026 - Avui)",
+      "orange_task_1": "Tests de penetració i auditories de seguretat",
+      "orange_task_2": "Identificació i explotació de vulnerabilitats",
+      "orange_task_3": "Redacció d'informes tècnics detallats",
       
       // Certifications
       "certifications": "Certificacions",
@@ -397,7 +412,7 @@ const resources = {
       
       // Home2 Component
       "full_name": "Jordan Macia De Las Heras",
-      "about_intro_text": "Passionate about cybersecurity and pentesting, with strong foundations in networking and development. I work with rigor and method, placing great importance on technical documentation, precision, and technological monitoring. Looking for a work-study position in pentesting for my final year of Master's (12 months – rhythm: 2 weeks company / 1 week school).",
+      "about_intro_text": "Passionate about cybersecurity and pentesting, with strong foundations in networking and development. I work with rigor and method, placing great importance on technical documentation, precision, and technological monitoring.",
       "birth_place": "",
       "languages": "Languages: Spanish, Catalan, French, English",
       
@@ -416,7 +431,7 @@ const resources = {
       // Professional Experience
       "professional_experience": "Professional Experience",
       "doomap_title": "Work-Study at Doomap",
-      "doomap_period": "(Dec 2024 - Present)",
+      "doomap_period": "(Dec 2024 - Aug 2026)",
       "doomap_task_1": "Cybersecurity audit and internal strengthening",
       "doomap_task_2": "AI deployment on VoIP telephony (ASR, LLM, Text-to-Speech)",
       "doomap_task_3": "Installation, management and maintenance of IT infrastructures",
@@ -426,6 +441,11 @@ const resources = {
       "telecom_task_1": "Alert and log management (SIEM ELK, EDR Defender, Netskope)",
       "telecom_task_2": "NOC/SOC support (alarm and alert processing)",
       "telecom_task_3": "Security incident analysis and response",
+      "orange_title": "Work-Study Pentester at Orange Cyberdefense",
+      "orange_period": "(Sept 2026 - Today)",
+      "orange_task_1": "Penetration testing and security audits",
+      "orange_task_2": "Vulnerability identification and exploitation",
+      "orange_task_3": "Detailed technical report writing",
       
       // Certifications
       "certifications": "Certifications",

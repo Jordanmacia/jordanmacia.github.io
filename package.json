@@ -30,7 +30,7 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.42.2",
-    "typescript": "^4.9.5",
+    "typescript": "^5.9.3",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
   },
