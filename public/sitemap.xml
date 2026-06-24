@@ -17,19 +17,4 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jord4n.pro" />
   </url>
 
-  <!-- Resume/CV page -->
-  <url>
-    <loc>https://www.jord4n.pro/resume</loc>
-    <lastmod>2026-06-24T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-    <!-- Language versions -->
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.jord4n.pro/resume" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.jord4n.pro/resume" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.jord4n.pro/resume" />
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.jord4n.pro/resume" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jord4n.pro/resume" />
-  </url>
-
 </urlset>

@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /resume
+Disallow: /resume/
 
 Sitemap: https://jord4n.pro/sitemap.xml

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 const SEOHead = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language || 'en';
+  const location = useLocation();
   
   const translations = {
     en: {
@@ -29,6 +31,7 @@ const SEOHead = () => {
   };
 
   const langData = translations[currentLang] || translations.en;
+  const isResumePage = location.pathname === '/resume' || location.pathname.startsWith('/resume/');
 
   useEffect(() => {
     // Update title
@@ -52,6 +55,15 @@ const SEOHead = () => {
       document.head.appendChild(metaKeywords);
     }
     metaKeywords.content = langData.keywords;
+
+    // Update robots meta tag
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = isResumePage ? 'noindex, nofollow' : 'index, follow';
     
     // Update canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -132,7 +144,7 @@ const SEOHead = () => {
     }
     ogType.content = 'website';
 
-  }, [currentLang, langData]);
+  }, [currentLang, langData, isResumePage]);
 
   return null;
 };
