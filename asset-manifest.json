@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.acfd685e.css",
+    "main.js": "/static/js/main.aef6e185.js",
+    "static/js/651.266d86e8.chunk.js": "/static/js/651.266d86e8.chunk.js",
+    "static/media/hacking.png": "/static/media/hacking.bc3248be40e3c216225b.png",
+    "static/media/jordan.png": "/static/media/jordan.ffbd28ee0d9d3b93e6db.png",
+    "static/media/portswigger.jpg": "/static/media/portswigger.6d2e780a3948a8f0f18a.jpg",
+    "static/media/ejpt.png": "/static/media/ejpt.546bd3e6129c97a6884b.png",
+    "static/media/htb.png": "/static/media/htb.6c6a39bd4d1b1554cf5f.png",
+    "static/media/CWES.png": "/static/media/CWES.134766bc156a21ad06a6.png",
+    "static/media/AI.png": "/static/media/AI.d6f72f90c745b0f28460.png",
+    "static/media/Jordan-Macia-CV.pdf": "/static/media/Jordan-Macia-CV.ad203a337dfba4228ce7.pdf",
+    "index.html": "/index.html",
+    "static/media/pre.svg": "/static/media/pre.b15826393a8aee9f5879.svg",
+    "main.acfd685e.css.map": "/static/css/main.acfd685e.css.map",
+    "main.aef6e185.js.map": "/static/js/main.aef6e185.js.map",
+    "651.266d86e8.chunk.js.map": "/static/js/651.266d86e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acfd685e.css",
+    "static/js/main.aef6e185.js"
+  ]
+}
