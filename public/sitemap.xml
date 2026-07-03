@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jord4n.pro/</loc>
+    <lastmod>2026-07-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+  </url>
+  <url>
+    <loc>https://jord4n.pro/en/</loc>
+    <lastmod>2026-07-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+  </url>
+  <url>
+    <loc>https://jord4n.pro/fr/</loc>
+    <lastmod>2026-07-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+  </url>
+  <url>
+    <loc>https://jord4n.pro/es/</loc>
+    <lastmod>2026-07-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+  </url>
+  <url>
+    <loc>https://jord4n.pro/ca/</loc>
+    <lastmod>2026-07-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jord4n.pro/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+  </url>
+</urlset>
