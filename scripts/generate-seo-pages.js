@@ -178,6 +178,7 @@ Object.keys(languages).forEach((code) => {
   writePage([code, "resume"], buildHtml(template, code, true));
 });
 
+fs.writeFileSync(indexPath, buildHtml(template, "en"), "utf8");
 writePage(["resume"], buildHtml(template, "en", true));
 fs.writeFileSync(path.join(buildDir, "404.html"), template, "utf8");
 
