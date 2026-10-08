@@ -7,12 +7,12 @@
 
 Live demo: **https://jord4n.pro**
 
-A responsive, multilingual portfolio showcasing my studies, projects, skills, and resume as a **cybersecurity Pentester**. Built with **React 17** and deployed to **GitHub Pages** with SEO-friendly static entry points for each language.
+A responsive, multilingual portfolio presenting Jordan Macia as a **Pentester**. Its editorial layout, inspired by [porfolio.dev](https://porfolio.dev/), follows a focused introduction, professional experience timeline, project rows, certifications and an about section with education. Built with **React 17**, with dark/light themes and SEO-friendly static entry points for GitHub Pages.
 
 The app keeps the React single-page experience while generating real GitHub Pages-compatible routes:
 
 ```text
-https://jord4n.pro/
+https://jord4n.pro/           -> redirects to /en/
 https://jord4n.pro/en/
 https://jord4n.pro/fr/
 https://jord4n.pro/es/
@@ -27,16 +27,17 @@ https://jord4n.pro/ca/
 │   └── generate-seo-pages.js
 │                            # creates GitHub Pages entry points after build
 ├── src/
-│   ├── Assets/              # images, Lottie JSONs, PDF resume
+│   ├── Assets/              # images and Lottie JSONs
 │   ├── components/
-│   │   ├── Home/            # hero, about, projects, tech stack
-│   │   ├── Resume/          # resume view
+│   │   ├── Home/            # hero, experience, projects, certifications, about
 │   │   ├── Navbar.js        # sticky header with language-aware links
 │   │   ├── SEOHead.js       # canonical, hreflang, Open Graph, JSON-LD
 │   │   ├── LanguageSelector.js
 │   │   └── ...
 │   ├── style/               # component styles
 │   ├── seoConfig.js         # domain, language routes, SEO constants
+│   ├── portfolioCopy.js     # editorial copy in English, French, Spanish and Catalan
+│   ├── portfolio.css        # responsive layout and theme tokens
 │   ├── i18n.js              # translation configuration
 │   └── App.js / index.js
 └── package.json
@@ -51,10 +52,6 @@ build/en/index.html
 build/fr/index.html
 build/es/index.html
 build/ca/index.html
-build/en/resume/index.html
-build/fr/resume/index.html
-build/es/resume/index.html
-build/ca/resume/index.html
 ```
 
 The generated pages include:
@@ -66,7 +63,15 @@ The generated pages include:
 - JSON-LD `Person`, `ProfilePage`, and `SiteNavigationElement`
 - sitemap and robots support
 
-`/resume` remains marked as `noindex`.
+The portfolio has no resume page or downloadable CV.
+
+The root `/` is a redirect-only HTML page, not a second English portfolio.
+It uses an immediate meta refresh (a permanent redirect signal for Google)
+and a canonical to `/en/`. JavaScript additionally preserves query strings
+and section anchors. Local React navigation also redirects `/` to `/en/`.
+All `x-default` links point to `/en/`; the sitemap lists only the four language
+URLs. This is not an HTTP 301: a server-side 301/308 requires hosting or proxy
+configuration outside this static GitHub Pages build.
 
 ## Installation
 

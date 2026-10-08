@@ -1,19 +1,19 @@
 {
   "short_name": "Jordan Macia",
-  "name": "Jordan Macia - Cybersecurity Expert & Pentester",
-  "description": "Portfolio of Jordan Macia, a Cybersecurity Expert specializing in Pentesting and Ethical Hacking",
+  "name": "Jordan Macia - Pentester",
+  "description": "Portfolio of Jordan Macia, Pentester specializing in Pentesting and Ethical Hacking",
   "icons": [
     {
-      "src": "favicon.png",
-      "sizes": "192x192",
+      "src": "favicon-96.png",
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "favicon.png",
+      "src": "favicon.png?v=6",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
     }
   ],
   "start_url": ".",

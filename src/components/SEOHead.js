@@ -10,28 +10,30 @@ import {
   LANGUAGE_ROUTES,
 } from '../seoConfig';
 
+
 const translations = {
   en: {
-    title: 'Portfolio | Jordan Macia - Cybersecurity Expert | Pentester',
-    description: 'Jordan Macia - Cybersecurity Expert & Pentester. Master in Cybersecurity. Specializing in Pentesting, Red Teaming, and Ethical Hacking. Available for work-study opportunities.',
-    keywords: 'Jordan Macia, cybersecurity, pentesting, ethical hacker, red teaming, master cybersecurity, bug bounty, security audits, penetration testing'
+    title: 'Portfolio | Jordan Macia - Pentester',
+    description: 'Explore my background, skills, projects, education, certifications and a little more about me.',
+    keywords: 'Jordan Macia, cybersecurity, pentesting, ethical hacking, projects, certifications, portfolio'
   },
   fr: {
-    title: 'Portfolio | Jordan Macia - Expert Cybersécurité | Pentester',
-    description: 'Jordan Macia - Expert en Cybersécurité et Pentester. Master en Cybersécurité. Spécialisé en Pentesting, Red Teaming et Hacking Éthique. Disponible pour alternance.',
-    keywords: 'Jordan Macia, cybersécurité, pentesting, hacker éthique, red teaming, master cybersécurité, bug bounty, audits sécurité, tests de pénétration'
+    title: 'Portfolio | Jordan Macia - Pentester',
+    description: 'Découvrez mon parcours, mes compétences, mes projets, mes études, mes certifications et un peu plus sur moi.',
+    keywords: 'Jordan Macia, cybersécurité, pentesting, hacking éthique, projets, certifications, portfolio'
   },
   es: {
-    title: 'Portfolio | Jordan Macia - Experto Ciberseguridad | Pentester',
-    description: 'Jordan Macia - Experto en Ciberseguridad y Pentester. Master en Ciberseguridad. Especializado en Pentesting, Red Teaming y Hacking Ético. Disponible para alternancia.',
-    keywords: 'Jordan Macia, ciberseguridad, pentesting, hacker ético, red teaming, master ciberseguridad, bug bounty, auditorías seguridad, pruebas penetración'
+    title: 'Portfolio | Jordan Macia - Pentester',
+    description: 'Descubre mi trayectoria, habilidades, proyectos, estudios, certificaciones y un poco más sobre mí.',
+    keywords: 'Jordan Macia, ciberseguridad, pentesting, hacking ético, proyectos, certificaciones, portfolio'
   },
   ad: {
-    title: 'Portfolio | Jordan Macia - Expert Ciberseguretat | Pentester',
-    description: 'Jordan Macia - Expert en Ciberseguretat i Pentester. Master en Ciberseguretat. Especialitzat en Pentesting, Red Teaming i Hacking Ètic. Disponible per a alternança.',
-    keywords: 'Jordan Macia, ciberseguretat, pentesting, hacker ètic, red teaming, master ciberseguretat, bug bounty, auditories seguretat, proves penetració'
+    title: 'Portfolio | Jordan Macia - Pentester',
+    description: 'Descobreix la meva trajectòria, habilitats, projectes, estudis, certificacions i una mica més sobre mi.',
+    keywords: 'Jordan Macia, ciberseguretat, pentesting, hacking ètic, projectes, certificacions, portafolis'
   }
 };
+
 
 const upsertMeta = (selector, create, valueKey, value) => {
   let element = document.querySelector(selector);
@@ -44,15 +46,13 @@ const upsertMeta = (selector, create, valueKey, value) => {
 };
 
 const SEOHead = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const routeLang = getRouteLangFromPath(location.pathname) || getCurrentRouteLang(i18n.language);
   const languageConfig = LANGUAGE_ROUTES[routeLang] || LANGUAGE_ROUTES[DEFAULT_ROUTE_LANG];
   const currentLang = languageConfig.i18nCode;
   const langData = translations[currentLang] || translations.en;
-  const isResumePage = location.pathname === '/resume' || location.pathname.endsWith('/resume');
-  const pagePath = isResumePage ? `/${routeLang}/resume/` : `/${routeLang}/`;
-  const canonicalUrl = `${BASE_URL}${pagePath}`;
+  const canonicalUrl = `${BASE_URL}/${routeLang}/`;
 
   useEffect(() => {
     document.title = langData.title;
@@ -88,7 +88,7 @@ const SEOHead = () => {
         return meta;
       },
       'content',
-      isResumePage ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'
+      'index, follow, noimageindex, max-image-preview:large'
     );
 
     upsertMeta(
@@ -119,14 +119,14 @@ const SEOHead = () => {
       const link = document.createElement('link');
       link.rel = 'alternate';
       link.hreflang = LANGUAGE_ROUTES[lang].htmlLang;
-      link.href = `${BASE_URL}/${lang}/${isResumePage ? 'resume/' : ''}`;
+      link.href = `${BASE_URL}/${lang}/`;
       document.head.appendChild(link);
     });
 
     const defaultLink = document.createElement('link');
     defaultLink.rel = 'alternate';
     defaultLink.hreflang = 'x-default';
-    defaultLink.href = `${BASE_URL}/`;
+    defaultLink.href = `${BASE_URL}/en/`;
     document.head.appendChild(defaultLink);
 
     upsertMeta(
@@ -184,7 +184,7 @@ const SEOHead = () => {
           '@id': `${BASE_URL}/#jordan-macia`,
           name: 'Jordan Macia De Las Heras',
           url: canonicalUrl,
-          jobTitle: 'Cybersecurity Student and Pentester',
+          jobTitle: 'Pentester',
           sameAs: [
             'https://www.linkedin.com/in/jordanmacia/',
             'https://github.com/jordanmacia',
@@ -205,11 +205,8 @@ const SEOHead = () => {
         {
           '@type': 'SiteNavigationElement',
           '@id': `${canonicalUrl}#site-navigation`,
-          name: ['Home', 'About', 'Projects', 'Resume'],
-          url: [
-            ...HOME_SECTION_IDS.map(section => `${BASE_URL}/${routeLang}/#${section}`),
-            `${BASE_URL}/${routeLang}/resume/`
-          ]
+          name: [t('experience'), t('projects'), t('cert_heading'), t('about_heading')],
+          url: HOME_SECTION_IDS.map(section => `${BASE_URL}/${routeLang}/#${section}`)
         }
       ]
     };
@@ -223,7 +220,7 @@ const SEOHead = () => {
     jsonLd.type = 'application/ld+json';
     jsonLd.textContent = JSON.stringify(structuredData);
     document.head.appendChild(jsonLd);
-  }, [canonicalUrl, currentLang, isResumePage, langData, languageConfig, routeLang]);
+  }, [canonicalUrl, currentLang, langData, languageConfig, routeLang, t]);
 
   return null;
 };

@@ -5,46 +5,47 @@ const buildDir = path.resolve(__dirname, "..", "build");
 const indexPath = path.join(buildDir, "index.html");
 const baseUrl = "https://jord4n.pro";
 
+
 const languages = {
   en: {
     htmlLang: "en",
     locale: "en_US",
     label: "English",
-    title: "Portfolio | Jordan Macia - Cybersecurity Expert | Pentester",
+    title: "Portfolio | Jordan Macia - Pentester",
     description:
-      "Jordan Macia - Cybersecurity Expert & Pentester. Master in Cybersecurity. Specializing in Pentesting, Red Teaming, and Ethical Hacking. Available for work-study opportunities.",
+      "Explore my background, skills, projects, education, certifications and a little more about me.",
     keywords:
-      "Jordan Macia, cybersecurity, pentesting, ethical hacker, red teaming, master cybersecurity, bug bounty, security audits, penetration testing",
+      "Jordan Macia, cybersecurity, pentesting, ethical hacking, projects, certifications, portfolio",
   },
   fr: {
     htmlLang: "fr",
     locale: "fr_FR",
     label: "Français",
-    title: "Portfolio | Jordan Macia - Expert Cybersécurité | Pentester",
+    title: "Portfolio | Jordan Macia - Pentester",
     description:
-      "Jordan Macia - Expert en Cybersécurité et Pentester. Master en Cybersécurité. Spécialisé en Pentesting, Red Teaming et Hacking Éthique. Disponible pour alternance.",
+      "Découvrez mon parcours, mes compétences, mes projets, mes études, mes certifications et un peu plus sur moi.",
     keywords:
-      "Jordan Macia, cybersécurité, pentesting, hacker éthique, red teaming, master cybersécurité, bug bounty, audits sécurité, tests de pénétration",
+      "Jordan Macia, cybersécurité, pentesting, hacking éthique, projets, certifications, portfolio",
   },
   es: {
     htmlLang: "es",
     locale: "es_ES",
     label: "Español",
-    title: "Portfolio | Jordan Macia - Experto Ciberseguridad | Pentester",
+    title: "Portfolio | Jordan Macia - Pentester",
     description:
-      "Jordan Macia - Experto en Ciberseguridad y Pentester. Master en Ciberseguridad. Especializado en Pentesting, Red Teaming y Hacking Ético. Disponible para alternancia.",
+      "Descubre mi trayectoria, habilidades, proyectos, estudios, certificaciones y un poco más sobre mí.",
     keywords:
-      "Jordan Macia, ciberseguridad, pentesting, hacker ético, red teaming, master ciberseguridad, bug bounty, auditorías seguridad, pruebas penetración",
+      "Jordan Macia, ciberseguridad, pentesting, hacking ético, proyectos, certificaciones, portfolio",
   },
   ca: {
     htmlLang: "ca",
     locale: "ca_ES",
     label: "Català",
-    title: "Portfolio | Jordan Macia - Expert Ciberseguretat | Pentester",
+    title: "Portfolio | Jordan Macia - Pentester",
     description:
-      "Jordan Macia - Expert en Ciberseguretat i Pentester. Master en Ciberseguretat. Especialitzat en Pentesting, Red Teaming i Hacking Ètic. Disponible per a alternança.",
+      "Descobreix la meva trajectòria, habilitats, projectes, estudis, certificacions i una mica més sobre mi.",
     keywords:
-      "Jordan Macia, ciberseguretat, pentesting, hacker ètic, red teaming, master ciberseguretat, bug bounty, auditories seguretat, proves penetració",
+      "Jordan Macia, ciberseguretat, pentesting, hacking ètic, projectes, certificacions, portafolis",
   },
 };
 
@@ -55,7 +56,7 @@ const alternateLinks = (suffix = "") =>
         `<link rel="alternate" hreflang="${lang.htmlLang}" href="${baseUrl}/${code}/${suffix}" />`
     )
     .join("\n  ")}
-  <link rel="alternate" hreflang="x-default" href="${baseUrl}/" />`;
+  <link rel="alternate" hreflang="x-default" href="${baseUrl}/en/" />`;
 
 const metaTag = (name, content) =>
   `<meta name="${name}" content="${content.replace(/"/g, "&quot;")}" />`;
@@ -88,7 +89,7 @@ const structuredData = (code, lang, canonicalUrl) =>
         "@id": `${baseUrl}/#jordan-macia`,
         name: "Jordan Macia De Las Heras",
         url: canonicalUrl,
-        jobTitle: "Cybersecurity Student and Pentester",
+        jobTitle: "Pentester",
         sameAs: [
           "https://www.linkedin.com/in/jordanmacia/",
           "https://github.com/jordanmacia",
@@ -115,23 +116,22 @@ const structuredData = (code, lang, canonicalUrl) =>
       {
         "@type": "SiteNavigationElement",
         "@id": `${canonicalUrl}#site-navigation`,
-        name: ["Home", "About", "Projects", "Resume"],
+        name: ["Experience", "Projects", "Certifications", "About"],
         url: [
-          `${baseUrl}/${code}/#home`,
-          `${baseUrl}/${code}/#about`,
+          `${baseUrl}/${code}/#experience`,
           `${baseUrl}/${code}/#project`,
-          `${baseUrl}/${code}/resume/`,
+          `${baseUrl}/${code}/#certifications`,
+          `${baseUrl}/${code}/#about`,
         ],
       },
     ],
   });
 
-const buildHtml = (template, code, isResume = false) => {
+const buildHtml = (template, code) => {
   const lang = languages[code];
-  const suffix = isResume ? "resume/" : "";
-  const canonicalUrl = `${baseUrl}/${code}/${suffix}`;
-  const robots = isResume ? "noindex, nofollow" : "index, follow, max-image-preview:large";
-  const alternates = alternateLinks(suffix);
+  const canonicalUrl = `${baseUrl}/${code}/`;
+  const robots = "index, follow, noimageindex, max-image-preview:large";
+  const alternates = alternateLinks();
   const otherLocales = Object.values(languages)
     .filter((language) => language.locale !== lang.locale)
     .map((language) => propertyTag("og:locale:alternate", language.locale))
@@ -175,11 +175,28 @@ const template = fs.readFileSync(indexPath, "utf8");
 
 Object.keys(languages).forEach((code) => {
   writePage([code], buildHtml(template, code));
-  writePage([code, "resume"], buildHtml(template, code, true));
 });
 
-fs.writeFileSync(indexPath, buildHtml(template, "en"), "utf8");
-writePage(["resume"], buildHtml(template, "en", true));
+// GitHub Pages is static: an immediate meta refresh supplies a permanent
+// canonicalization signal without relying on React or JavaScript rendering.
+// The optional script preserves incoming query strings and section anchors.
+const rootRedirect = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jordan Macia - Pentester</title>
+  <link rel="canonical" href="${baseUrl}/en/" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <script>window.location.replace('/en/' + window.location.search + window.location.hash);</script>
+  <meta http-equiv="refresh" content="0; url=${baseUrl}/en/" />
+</head>
+<body>
+  <p>This page has moved to <a href="${baseUrl}/en/">Jordan Macia’s portfolio</a>.</p>
+</body>
+</html>
+`;
+fs.writeFileSync(indexPath, rootRedirect, "utf8");
 fs.writeFileSync(path.join(buildDir, "404.html"), template, "utf8");
 
-console.log("Generated GitHub Pages SEO entry points for /en, /fr, /es, /ca and resume routes.");
+console.log("Generated GitHub Pages SEO entry points for /en, /fr, /es and /ca.");

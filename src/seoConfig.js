@@ -16,7 +16,7 @@ export const I18N_TO_ROUTE = Object.fromEntries(
 
 export const DEFAULT_ROUTE_LANG = "en";
 
-export const HOME_SECTION_IDS = ["home", "about", "project"];
+export const HOME_SECTION_IDS = ["experience", "project", "certifications", "about"];
 
 export const getRouteLangFromPath = (pathname = "/") => {
   const firstSegment = pathname.split("/").filter(Boolean)[0];

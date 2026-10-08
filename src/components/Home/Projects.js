@@ -1,107 +1,65 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
-import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import CWES from "../../Assets/Projects/CWES.png";
-import AI from "../../Assets/Projects/AI.png";
-import Htb from "../../Assets/Projects/htb.png";
-import Ejpt from "../../Assets/Projects/ejpt.png";
-import PortSwigger from "../../Assets/Projects/portswigger.jpg";
-import HackingNotes from "../../Assets/Projects/hacking.png";
-import { SocialLinks } from "./Toolstack";
+import { useTranslation } from "react-i18next";
+import { FiCode, FiArrowUpRight, FiTrendingUp } from "react-icons/fi";
+import HackingNotes from "../../Assets/Projects/hacking-notes.png";
+import HtbPortSwigger from "../../Assets/Projects/hackthebox-portswigger.png";
+import HackingNotesAvif from "../../Assets/Optimized/hacking-notes.avif";
+import HtbPortSwiggerAvif from "../../Assets/Optimized/hackthebox-portswigger.avif";
+import SectionHeading from "./SectionHeading";
 
-function Projects() {
+export default function Projects() {
   const { t } = useTranslation();
-  
+  const projects = [
+    { key: "notes", title: "Hacking Notes", description: "notes_summary",
+      tags: ["Offensive security", "Knowledge sharing", "Write-ups"],
+      metric: "notes_visits",
+      href: "https://hacking-notes.jord4n.pro/", link: "visit_notes", image: HackingNotes, avif: HackingNotesAvif },
+    { key: "htb", title: "Hack The Box & PortSwigger", description: "htb_summary", extraDescription: "portswigger_summary",
+      tags: ["Linux / Windows", "CTF", "HTB Academy", "Web labs"], image: HtbPortSwigger, avif: HtbPortSwiggerAvif },
+  ];
+
   return (
-    <Container fluid className="project-section" id="project">      
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          {t('recent_prefix')}{' '}
-          <strong className="purple">{t('recent_highlight')}</strong>{' '}
-          {t('recent_suffix')}
-        </h1>
-        <p style={{ color: "white" }}>
-          {t('recent_projects')}
-        </p>
-
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={HackingNotes}
-              isBlog={false}
-              title={<strong>{t('hacking_notes')}</strong>}
-              description={t('notes_description')}
-              notesLink="https://hacking-notes.jord4n.pro/"
-              alwaysShowDescription={true}
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={PortSwigger}
-              isBlog={false}
-              title={<strong>{t('websec_academy')}</strong>}
-              description={t('websec_academy_description')}
-              courseLink="https://hacking-notes.jord4n.pro/web-hacking-portswigger/web/"
-              certificationLink="https://portswigger.net/web-security/e/c/1095edc235a1c7d4"
-              alwaysShowDescription={false}
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={CWES}
-              isBlog={false}
-              title={<strong>{t('ewpt_cert')}</strong>}
-              description={t('ewpt_description')}
-              certificationLink="https://www.credly.com/badges/db68575b-8a45-471d-9cfb-2a0e5df0c0f8"
-              alwaysShowDescription={true}
-            />
-          </Col>
-        </Row>
-
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Ejpt}
-              isBlog={false}
-              title={<strong>{t('ejpt_cert')}</strong>}
-              description={t('ejpt_description')}
-              certificationLink="https://certs.ine.com/41b85729-a887-4a15-bd05-16ad3e6aca84#acc.EDitTVXy"
-              alwaysShowDescription={true}
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Htb}
-              isBlog={false}
-              title={<strong>{t('training_platform')}</strong>}
-              description={
-                <>
-                  <strong className="highlight-text">HackTheBox</strong>
-                  {' '}
-                  {t('htb_description')}
-                </>
-              }
-              cubeLink="https://app.hackthebox.com/users/1345367"
-              alwaysShowDescription={true}
-            />
-          </Col>
-          <Col md={4} className="project-card"> 
-            <ProjectCard
-              imgPath={AI}
-              isBlog={false}
-              title={<strong>{t('ai_project')}</strong>}
-              description={t('ai_description')}
-              alwaysShowDescription={false}
-            />
-          </Col>
-        </Row>
-        <SocialLinks />
-      </Container>
-    </Container>
+    <section id="project" className="pf-section" aria-labelledby="project-title">
+      <SectionHeading id="project-title" icon={FiCode} title={t("projects_heading")} />
+      <div className="pf-project-list">
+        {projects.map((project) => (
+          <article key={project.key} className="pf-project">
+            {project.href ? (
+              <a className="pf-preview-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
+                <div className="pf-project-preview pf-project-image">
+                  <picture>
+                    <source srcSet={project.avif} type="image/avif" />
+                    <img src={project.image} alt={project.title} loading="lazy" decoding="async" width="1735" height="906" />
+                  </picture>
+                </div>
+              </a>
+            ) : (
+              <div className="pf-project-preview pf-project-image">
+                <picture>
+                  <source srcSet={project.avif} type="image/avif" />
+                  <img src={project.image} alt={project.title} loading="lazy" decoding="async" width="1672" height="941" />
+                </picture>
+              </div>
+            )}
+            <div className="pf-project-copy">
+              <h3>{project.title}</h3>
+              {project.metric && (
+                <div className="pf-project-metric"><FiTrendingUp aria-hidden="true" /><strong>+100k</strong><span>{t(project.metric)}</span></div>
+              )}
+              <ul className="pf-tags" aria-label={t("skills")}>
+                {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
+              <p>{project.extraDescription && <strong>Hack The Box : </strong>}{t(project.description)}</p>
+              {project.extraDescription && <p><strong>PortSwigger : </strong>{t(project.extraDescription)}</p>}
+              {project.href && (
+                <a className="pf-button pf-project-button" href={project.href} target="_blank" rel="noopener noreferrer">
+                  {t(project.link)} <FiArrowUpRight aria-hidden="true" />
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
-
-export default Projects;

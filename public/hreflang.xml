@@ -7,7 +7,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/en/" />
   </url>
   <url>
     <loc>https://jord4n.pro/fr/</loc>
@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/en/" />
   </url>
   <url>
     <loc>https://jord4n.pro/es/</loc>
@@ -23,7 +23,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/en/" />
   </url>
   <url>
     <loc>https://jord4n.pro/ca/</loc>
@@ -31,6 +31,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://jord4n.pro/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jord4n.pro/es/" />
     <xhtml:link rel="alternate" hreflang="ca" href="https://jord4n.pro/ca/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jord4n.pro/en/" />
   </url>
 </urlset>

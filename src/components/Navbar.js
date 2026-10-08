@@ -1,111 +1,153 @@
-import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import { useTranslation } from 'react-i18next';
-import logo from "../Assets/logo.png";
-import { Link, useLocation } from "react-router-dom";
-import { getCurrentRouteLang, getRouteLangFromPath } from "../seoConfig";
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { FiMoon, FiSun } from "react-icons/fi";
+import LanguageSelector from "./LanguageSelector";
 
-import Button from "react-bootstrap/Button";
-import { MdEmail } from "react-icons/md";
-import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
+const sections = [
+  ["experience", "experience"],
+  ["project", "projects"],
+  ["certifications", "cert_heading"],
+  ["about", "about_heading"],
+];
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
-  const { t, i18n } = useTranslation();
-  const location = useLocation();
-  const routeLang = getRouteLangFromPath(location.pathname) || getCurrentRouteLang(i18n.language);
-  const langPrefix = `/${routeLang}`;
-
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
+  const { t } = useTranslation();
+  const [active, setActive] = useState("");
+  const [compact, setCompact] = useState(false);
+  const [compactWidth, setCompactWidth] = useState(640);
+  const navRef = useRef(null);
+  const morphRef = useRef({ value: 0, velocity: 0 });
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+    } catch {
+      return "dark";
     }
-  }
+  });
 
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem("portfolio-theme", theme); } catch {}
+  }, [theme]);
+
+  useEffect(() => {
+    const updateCompact = () => setCompact(window.scrollY > 80);
+    updateCompact();
+    window.addEventListener("scroll", updateCompact, { passive: true });
+    window.addEventListener("pageshow", updateCompact);
+    return () => {
+      window.removeEventListener("scroll", updateCompact);
+      window.removeEventListener("pageshow", updateCompact);
+    };
+  }, []);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const target = compact ? 1 : 0;
+    let frame;
+    let previousTime;
+    let startTime;
+    let startValue;
+    const paint = (value) => nav.style.setProperty("--pf-nav-morph", String(value));
+    const tick = (time) => {
+      const spring = morphRef.current;
+      if (motion.matches) {
+        // Reduced motion still gets a gentle, non-bouncing resize instead of a hard cut.
+        startTime ??= time;
+        const progress = Math.min((time - startTime) / 450, 1);
+        const eased = progress * progress * (3 - 2 * progress);
+        spring.value = startValue + (target - startValue) * eased;
+        spring.velocity = 0;
+        paint(spring.value);
+        if (progress < 1) frame = requestAnimationFrame(tick);
+        return;
+      }
+      const dt = Math.min((time - (previousTime ?? time - 16)) / 1000, 0.032);
+      previousTime = time;
+      // A damped spring moves the frame, padding and depth together without scaling text.
+      spring.velocity += (150 * (target - spring.value) - 25 * spring.velocity) * dt;
+      spring.value += spring.velocity * dt;
+      paint(Math.max(0, Math.min(1, spring.value)));
+      if (Math.abs(target - spring.value) < 0.001 && Math.abs(spring.velocity) < 0.005) {
+        spring.value = target;
+        spring.velocity = 0;
+        paint(target);
+      } else {
+        frame = requestAnimationFrame(tick);
+      }
+    };
+    const start = () => {
+      cancelAnimationFrame(frame);
+      previousTime = undefined;
+      startTime = undefined;
+      startValue = morphRef.current.value;
+      frame = requestAnimationFrame(tick);
+    };
+    start();
+    motion.addEventListener("change", start);
+    return () => {
+      cancelAnimationFrame(frame);
+      motion.removeEventListener("change", start);
+    };
+  }, [compact]);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const measure = () => {
+      if (window.innerWidth <= 600) return;
+      const style = getComputedStyle(nav);
+      const contentWidth = Array.from(nav.children).reduce((total, child) => total + child.getBoundingClientRect().width, 0);
+      const compactPadding = window.innerWidth <= 760 ? 12 : 15;
+      setCompactWidth(Math.ceil(contentWidth + parseFloat(style.columnGap) + compactPadding * 2 + 2));
+    };
+    const observer = new ResizeObserver(measure);
+    Array.from(nav.children).forEach((child) => observer.observe(child));
+    window.addEventListener("resize", measure);
+    measure();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: "-15% 0px -55% 0px" });
+    ["home", ...sections.map(([id]) => id)].forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
-    >
-      <Container>
-        <Navbar.Brand href={`${langPrefix}/#home`} className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link href={`${langPrefix}/#home`} onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t('home')}
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link href={`${langPrefix}/#about`} onClick={() => updateExpanded(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> {t('about')}
-              </Nav.Link>
-            </Nav.Item>
-
-
-            <Nav.Item>
-              <Nav.Link href={`${langPrefix}/#project`} onClick={() => updateExpanded(false)}>
-                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> {t('projects')}
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link href="https://hacking-notes.jord4n.pro/" target="_blank">
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Hacking Notes
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to={`${langPrefix}/resume`}
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> {t('resume')}
-              </Nav.Link>
-            </Nav.Item>
-
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="mailto:jordanmacia@protonmail.com"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <MdEmail style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header className={`pf-header${compact ? " pf-header-compact" : ""}`}>
+      <nav ref={navRef} className="pf-nav" aria-label={t("menu")}
+        style={{ "--pf-nav-compact-width": `${compactWidth}px` }}>
+        <div className="pf-nav-links">
+          {sections.map(([id, label]) => (
+            <a key={id} href={`#${id}`} className={active === id ? "is-active" : ""}
+              aria-current={active === id ? "location" : undefined}>
+              {t(label)}
+            </a>
+          ))}
+          <a href="mailto:jordanmacia@protonmail.com">{t("contact")}</a>
+        </div>
+        <div className="pf-nav-tools">
+          <LanguageSelector />
+          <button className="pf-theme-toggle" type="button"
+            aria-label={t(theme === "dark" ? "theme_light" : "theme_dark")}
+            title={t(theme === "dark" ? "theme_light" : "theme_dark")}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+          </button>
+        </div>
+      </nav>
+    </header>
   );
 }
 

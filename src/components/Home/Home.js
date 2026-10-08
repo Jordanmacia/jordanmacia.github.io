@@ -1,87 +1,67 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
-import Particle from "../Particle";
-import Home2 from "./Home2";
+import { Trans, useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+import { FiMail } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
+import HackingNotesIcon from "../../Assets/Brands/hacking-notes.png";
+import HackingNotesIconAvif from "../../Assets/Optimized/hacking-notes-icon.avif";
+import Experience from "./Experience";
+import Home2, { Certifications } from "./Home2";
 import Projects from "./Projects";
-import hackerAnimation from "../../Assets/hacker.json";
-import Type from "./Type";
-import Lottie from "lottie-react";
+import Education, { Languages } from "./Education";
+import { AnimatedContent, HeroStrong } from "../PortfolioEffects";
 
-function Home() {
+export default function Home() {
   const { t } = useTranslation();
+  const location = useLocation();
 
-  // Fonction pour gérer le défilement vers la section correspondante
-  const scrollToSection = (hash) => {
-    if (hash === "#project" || hash === "#about" || hash === "#home") {
-      const section = document.querySelector(hash);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  // Utilisation de useEffect pour écouter les changements dans l'URL
   useEffect(() => {
-    const handleHashChange = () => {
-      scrollToSection(window.location.hash);
+    const scrollToHash = () => {
+      const id = window.location.hash.slice(1);
+      if (!id) return;
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "instant", block: "start" });
     };
-
-    // Déclencher le défilement au chargement initial de la page
-    handleHashChange();
-
-    // Écouter les changements de hash dans l'URL
-    window.addEventListener("hashchange", handleHashChange);
-
-    // Nettoyer l'écouteur d'événement lors du démontage du composant
+    // Language switches preserve the current position, even when the URL has an old anchor.
+    const frame = location.state?.scrollPosition ? null : requestAnimationFrame(scrollToHash);
+    window.addEventListener("hashchange", scrollToHash);
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
+      if (frame !== null) cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", scrollToHash);
     };
-  }, []);
+  }, [location.pathname, location.hash, location.state]);
 
   return (
-    <section>
-      {/* Section Home */}
-      <Container fluid className="home-section" id="home">
-        <Particle />
-        <Container className="home-content">
-          <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15, marginLeft: "-5px" }} className="heading">
-                {t('hello')}{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
-
-              <h1 className="heading-name">
-                {t('im')}
-                <strong className="main-name"> Jordan</strong>
-              </h1>
-              <div style={{ padding: 45, textAlign: "left" }}>
-                <Type />
-              </div>
-            </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <Lottie
-                animationData={hackerAnimation}
-                loop
-                autoplay
-                style={{
-                  height: "500px",
-                  width: "500px",
-                  marginLeft: "-75px",
-                }}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-      <Home2 />
-      <Projects/>
-    </section>
+    <main id="main" className="pf-container">
+      <section id="home" className="pf-hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" className="pf-enter pf-delay-1">
+          <span className="pf-greeting">{t("hero_greeting")} </span>
+          <span className="pf-name-accent">Jordan Macia De Las Heras</span>
+        </h1>
+        <div className="pf-hero-intro pf-enter pf-delay-2">
+          <p><Trans i18nKey="hero_intro" components={{ strong: <HeroStrong /> }} /></p>
+        </div>
+        <nav className="pf-social-links pf-enter pf-delay-3" aria-label={t("social_label")}>
+          <a className="pf-button" href="mailto:jordanmacia@protonmail.com">
+            <FiMail aria-hidden="true" /> {t("hero_contact")}
+          </a>
+          <a className="pf-button" href="https://www.linkedin.com/in/jordanmacia/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin aria-hidden="true" /> LinkedIn
+          </a>
+          <a className="pf-button" href="https://hacking-notes.jord4n.pro/" target="_blank" rel="noopener noreferrer">
+            <picture className="pf-social-icon">
+              <source srcSet={HackingNotesIconAvif} type="image/avif" />
+              <img src={HackingNotesIcon} alt="" width="18" height="18" />
+            </picture> Hacking Notes
+          </a>
+        </nav>
+      </section>
+      <AnimatedContent><Experience /></AnimatedContent>
+      <AnimatedContent><Projects /></AnimatedContent>
+      <AnimatedContent><Certifications /></AnimatedContent>
+      <AnimatedContent><Education /></AnimatedContent>
+      <AnimatedContent><Languages /></AnimatedContent>
+      <AnimatedContent><Home2 /></AnimatedContent>
+    </main>
   );
 }
-
-export default Home;

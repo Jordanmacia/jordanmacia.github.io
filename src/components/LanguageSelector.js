@@ -1,55 +1,55 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getLanguagePath, LANGUAGE_ROUTES } from '../seoConfig';
-import './LanguageSelector.css';
+import React, { useEffect, useRef } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getCurrentRouteLang, getLanguagePath, LANGUAGE_ROUTES } from "../seoConfig";
 
-const LanguageSelector = () => {
-  const { i18n } = useTranslation();
+export default function LanguageSelector() {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const selectorRef = useRef(null);
+  const current = getCurrentRouteLang(i18n.resolvedLanguage || i18n.language);
+  const flagPath = (code) => `/flags/${code === "en" ? "gb" : code === "ca" ? "ad" : code}.svg`;
+  const orderedLanguages = ["es", "ca", "fr", "en"]
+    .map((code) => [code, LANGUAGE_ROUTES[code]])
+    .sort(([a], [b]) => Number(b === current) - Number(a === current));
 
-  const changeLanguage = (routeLang) => {
-    const language = LANGUAGE_ROUTES[routeLang];
-    const nextPath = getLanguagePath(routeLang, location.pathname);
+  useEffect(() => {
+    const closeOutside = (event) => {
+      if (!selectorRef.current?.contains(event.target)) selectorRef.current?.removeAttribute("open");
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => document.removeEventListener("pointerdown", closeOutside);
+  }, []);
 
-    i18n.changeLanguage(language.i18nCode);
-    navigate(`${nextPath}${location.hash}`);
+  const changeLanguage = (event, routeLang) => {
+    event.preventDefault();
+    const scrollPosition = { x: window.scrollX, y: window.scrollY };
+    i18n.changeLanguage(LANGUAGE_ROUTES[routeLang].i18nCode);
+    navigate(`${getLanguagePath(routeLang, location.pathname)}${location.search}${location.hash}`, { state: { scrollPosition } });
+    selectorRef.current.removeAttribute("open");
+    selectorRef.current.querySelector("summary").focus({ preventScroll: true });
   };
 
   return (
-    <div className="language-selector">
-      <button 
-        className={`flag-button ${i18n.language === 'fr' ? 'active' : ''}`}
-        onClick={() => changeLanguage('fr')}
-        aria-label="Français"
-      >
-        <img src="/flags/fr.svg" alt="FR" title="Français" />
-      </button>
-      <button 
-        className={`flag-button ${i18n.language === 'es' ? 'active' : ''}`}
-        onClick={() => changeLanguage('es')}
-        aria-label="Español"
-      >
-        <img src="/flags/es.svg" alt="ES" title="Español" />
-      </button>
-      <button 
-        className={`flag-button ${i18n.language === 'en' ? 'active' : ''}`}
-        onClick={() => changeLanguage('en')}
-        aria-label="English"
-      >
-        <img src="/flags/gb.svg" alt="EN" title="English" />
-      </button>
-      <button 
-        className={`flag-button ${i18n.language === 'ad' ? 'active' : ''}`}
-        onClick={() => changeLanguage('ca')}
-        aria-label="Català"
-      >
-        <img src="/flags/ad.svg" alt="AD" title="Català" />
-      </button>
-      
-    </div>
+    <details className="pf-language" ref={selectorRef} onKeyDown={(event) => {
+      if (event.key === "Escape") {
+        selectorRef.current.removeAttribute("open");
+        selectorRef.current.querySelector("summary").focus({ preventScroll: true });
+      }
+    }}>
+      <summary aria-label={`${t("language")}: ${LANGUAGE_ROUTES[current].label}`}>
+        <img src={flagPath(current)} alt="" width="24" height="16" /><FiChevronDown aria-hidden="true" />
+      </summary>
+      <div className="pf-language-options">
+        {orderedLanguages.map(([code, language]) => (
+          <a key={code} href={`${getLanguagePath(code, location.pathname)}${location.search}${location.hash}`} lang={language.htmlLang}
+            aria-current={code === current ? "true" : undefined} onClick={(event) => changeLanguage(event, code)}>
+            <img src={flagPath(code)} alt="" width="24" height="16" />{language.label}
+          </a>
+        ))}
+      </div>
+    </details>
   );
-};
-
-export default LanguageSelector;
+}
