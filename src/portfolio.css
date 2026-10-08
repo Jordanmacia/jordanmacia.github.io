@@ -84,6 +84,9 @@ body {
 .pf-nav-links a { padding: 7px 10px; font-size: 12px; font-weight: 500; color: var(--pf-muted); white-space: nowrap; border-radius: 30px; transition: color 160ms, background 160ms; }
 .pf-nav-links a:hover, .pf-nav-links a.is-active { color: var(--pf-accent); background: var(--pf-accent-soft); }
 .pf-nav-tools { display: flex; align-items: center; gap: 8px; border-left: 1px solid var(--pf-border); padding-left: 13px; }
+.pf-mobile-tools { display: none; }
+.pf-mobile-tools summary { list-style: none; }
+.pf-mobile-tools summary::-webkit-details-marker { display: none; }
 .pf-language { position: relative; color: var(--pf-text); }
 .pf-language summary { display: flex; align-items: center; gap: 5px; padding: 6px; border-radius: 8px; cursor: pointer; list-style: none; }
 .pf-language summary::-webkit-details-marker { display: none; }
@@ -379,15 +382,21 @@ html[data-theme="light"] .pf-languages > svg { color: #c4253b; }
 @media (max-width: 600px) {
   .pf-container { width: calc(100% - 40px); }
   .pf-header { top: 10px; padding-inline: 10px; }
-  /* The two-row mobile menu has a fixed shape: the desktop morph would otherwise
-     change its padding while the browser is settling the initial viewport. */
-  .pf-nav { --pf-nav-morph: 0 !important; --pf-nav-wide: 100%; --pf-nav-narrow: 100%; box-sizing: border-box; max-width: 440px; display: flex; flex-direction: column; align-items: stretch; border-radius: 22px; gap: 9px; padding: 11px 12px; }
-  .pf-nav-tools { border-left: none; padding-left: 0; align-self: flex-end; }
-  .pf-nav-links { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: stretch; gap: 4px; min-width: 0; border-bottom: 1px solid var(--pf-border); padding-bottom: 9px; }
-  .pf-nav-links a { display: grid; grid-column: span 2; place-items: center; min-height: 34px; padding: 5px 3px; font-size: 10px; line-height: 1.2; text-align: center; white-space: normal; }
-  .pf-nav-links a:nth-child(4) { grid-column: 2 / span 2; }
-  .pf-nav-links a:nth-child(5) { grid-column: 4 / span 2; }
-  .pf-hero { padding-block: 230px 65px; }
+  /* Keep the mobile bar compact and static; the desktop resize effect does not fit a small viewport. */
+  .pf-nav { --pf-nav-morph: 0 !important; --pf-nav-wide: 100%; --pf-nav-narrow: 100%; box-sizing: border-box; max-width: 440px; min-height: 42px; gap: 7px; padding: 5px 8px; border-radius: 14px; }
+  .pf-nav, .pf-nav * { transition: none !important; }
+  .pf-nav > div { flex-shrink: 1; }
+  .pf-nav-tools { display: none; }
+  .pf-nav-links { display: flex; flex: 1 1 auto; min-width: 0; gap: 1px; overflow-x: auto; scrollbar-width: none; }
+  .pf-nav-links::-webkit-scrollbar { display: none; }
+  .pf-nav-links a { flex: 0 0 auto; padding: 6px 5px; font-size: 9px; line-height: 1; white-space: nowrap; }
+  .pf-mobile-tools { position: relative; display: block; flex: 0 0 auto; }
+  .pf-mobile-tools > summary { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; color: var(--pf-muted); cursor: pointer; }
+  .pf-mobile-tools > summary:hover, .pf-mobile-tools[open] > summary { color: var(--pf-accent); background: var(--pf-accent-soft); }
+  .pf-mobile-tools > summary svg { width: 19px; height: 19px; }
+  .pf-mobile-tools-menu { position: absolute; top: calc(100% + 8px); right: 0; display: flex; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--pf-border); border-radius: 10px; background: var(--pf-surface); box-shadow: 0 10px 26px #00000020; }
+  .pf-mobile-tools-menu .pf-language-options { top: calc(100% + 8px); }
+  .pf-hero { padding-block: 116px 65px; }
   .pf-hero h1 { font-size: clamp(13px, 4.2vw, 25px); letter-spacing: -.7px; }
   .pf-hero-intro { margin-top: 22px; font-size: 18px; line-height: 1.6; }
   .pf-social-links { gap: 10px; margin-top: 28px; }
@@ -429,8 +438,7 @@ html[data-theme="light"] .pf-languages > svg { color: #c4253b; }
   .pf-footer-divider { margin-inline: 0; }
 }
 @media (max-width: 360px) {
-  .pf-nav-links { gap: 3px; }
-  .pf-nav-links a { font-size: 9px; padding-inline: 2px; }
+  .pf-nav-links a { font-size: 8px; padding-inline: 4px; }
 }
 /* React Bits-inspired details: one-shot reveals and stable text. */
 .pf-reveal { opacity: 1; transform: translateY(0); transition: opacity 900ms ease, transform 900ms cubic-bezier(.22, 1, .36, 1); }

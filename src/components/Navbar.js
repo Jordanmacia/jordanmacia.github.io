@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiMoon, FiMoreHorizontal, FiSun } from "react-icons/fi";
 import LanguageSelector from "./LanguageSelector";
 
 const sections = [
@@ -146,6 +146,20 @@ function NavBar() {
             {theme === "dark" ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
           </button>
         </div>
+        <details className="pf-mobile-tools">
+          <summary aria-label={t("menu")} title={t("menu")}>
+            <FiMoreHorizontal aria-hidden="true" />
+          </summary>
+          <div className="pf-mobile-tools-menu">
+            <LanguageSelector />
+            <button className="pf-theme-toggle" type="button"
+              aria-label={t(theme === "dark" ? "theme_light" : "theme_dark")}
+              title={t(theme === "dark" ? "theme_light" : "theme_dark")}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+              {theme === "dark" ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+            </button>
+          </div>
+        </details>
       </nav>
     </header>
   );
