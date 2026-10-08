@@ -196,7 +196,7 @@ html[data-theme="light"] .pf-social-links .pf-button { background: #f1f3f6; bord
 /* Credential links and an about section that keeps the focus on the person. */
 .pf-cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .portfolio .pf-cert { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-width: 0; border: 1px solid #ffffff12; border-radius: 12px; padding: 12px; background: #ffffff04; color: var(--pf-text); transition: background 180ms, border-color 180ms; }
-.portfolio .pf-cert:hover { border-color: #ffffff28; background: #ffffff08; }
+.portfolio .pf-cert:hover { border-color: var(--pf-accent); background: #ffffff08; }
 .portfolio .pf-cert:hover .pf-cert-link { text-decoration: underline; text-underline-offset: 4px; }
 .pf-cert-preview { position: relative; width: 100%; min-width: 0; aspect-ratio: 1920 / 1079; overflow: hidden; border: 0; border-radius: 6px; background: #11151c; }
 .pf-cert-preview picture { position: absolute; inset: 0; display: block; }
@@ -348,7 +348,7 @@ html[data-theme="light"] .portfolio .pf-cert {
   border-color: #18213212;
   box-shadow: none;
 }
-html[data-theme="light"] .portfolio .pf-cert:hover { border-color: #18213230; background: #fff; }
+html[data-theme="light"] .portfolio .pf-cert:hover { border-color: #c4253b; background: #fff; }
 html[data-theme="light"] .pf-cert-preparing { background: #fff; border-color: #18213212; box-shadow: none; }
 html[data-theme="light"] .pf-cert-mark-wide img { filter: brightness(.45); }
 html[data-theme="light"] .pf-cert-preview { background: #edf0f6; border-color: #e3e7ef; }
@@ -378,12 +378,16 @@ html[data-theme="light"] .pf-languages > svg { color: #c4253b; }
 }
 @media (max-width: 600px) {
   .pf-container { width: calc(100% - 40px); }
-  .pf-header { top: 12px; padding-inline: 12px; }
-  .pf-nav { --pf-nav-wide: min(440px, 100%); --pf-nav-narrow: min(420px, calc(100% - 16px)); max-width: 440px; display: flex; flex-direction: column; align-items: stretch; border-radius: calc(24px - 6px * var(--pf-nav-morph)); gap: 5px; padding: calc(12px - 4px * var(--pf-nav-morph)) 13px; }
+  .pf-header { top: 10px; padding-inline: 10px; }
+  /* The two-row mobile menu has a fixed shape: the desktop morph would otherwise
+     change its padding while the browser is settling the initial viewport. */
+  .pf-nav { --pf-nav-morph: 0 !important; --pf-nav-wide: 100%; --pf-nav-narrow: 100%; box-sizing: border-box; max-width: 440px; display: flex; flex-direction: column; align-items: stretch; border-radius: 22px; gap: 9px; padding: 11px 12px; }
   .pf-nav-tools { border-left: none; padding-left: 0; align-self: flex-end; }
-  .pf-nav-links { justify-content: space-between; min-width: 0; border-bottom: 1px solid var(--pf-border); padding-bottom: 5px; }
-  .pf-nav-links a { font-size: 10px; padding: 6px 4px; }
-  .pf-hero { padding-block: 157px 65px; }
+  .pf-nav-links { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: stretch; gap: 4px; min-width: 0; border-bottom: 1px solid var(--pf-border); padding-bottom: 9px; }
+  .pf-nav-links a { display: grid; grid-column: span 2; place-items: center; min-height: 34px; padding: 5px 3px; font-size: 10px; line-height: 1.2; text-align: center; white-space: normal; }
+  .pf-nav-links a:nth-child(4) { grid-column: 2 / span 2; }
+  .pf-nav-links a:nth-child(5) { grid-column: 4 / span 2; }
+  .pf-hero { padding-block: 230px 65px; }
   .pf-hero h1 { font-size: clamp(13px, 4.2vw, 25px); letter-spacing: -.7px; }
   .pf-hero-intro { margin-top: 22px; font-size: 18px; line-height: 1.6; }
   .pf-social-links { gap: 10px; margin-top: 28px; }
@@ -425,7 +429,7 @@ html[data-theme="light"] .pf-languages > svg { color: #c4253b; }
   .pf-footer-divider { margin-inline: 0; }
 }
 @media (max-width: 360px) {
-  .pf-nav-links { gap: 0; }
+  .pf-nav-links { gap: 3px; }
   .pf-nav-links a { font-size: 9px; padding-inline: 2px; }
 }
 /* React Bits-inspired details: one-shot reveals and stable text. */

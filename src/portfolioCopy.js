@@ -2,6 +2,7 @@
 const portfolioCopy = {
   en: {
     experience: 'Experience',
+    projects: 'Projects',
     experience_heading: 'Professional experience',
     projects_heading: 'Projects & practice',
     about_heading: 'About me',
@@ -57,6 +58,7 @@ const portfolioCopy = {
   },
   es: {
     experience: 'Experiencia',
+    projects: 'Proyectos',
     experience_heading: 'Experiencia profesional',
     projects_heading: 'Proyectos y práctica',
     about_heading: 'Sobre mí',
@@ -112,6 +114,7 @@ const portfolioCopy = {
   },
   fr: {
     experience: 'Expérience',
+    projects: 'Projets',
     experience_heading: 'Expérience professionnelle',
     projects_heading: 'Projets & pratique',
     about_heading: 'À propos',
@@ -167,6 +170,7 @@ const portfolioCopy = {
   },
   ad: {
     experience: 'Experiència',
+    projects: 'Projectes',
     experience_heading: 'Experiència professional',
     projects_heading: 'Projectes i pràctica',
     about_heading: 'Sobre mi',
